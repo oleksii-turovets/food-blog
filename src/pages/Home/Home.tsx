@@ -4,8 +4,7 @@ type Props = {}
 const Home = (props: Props) => {
   return (
       <>
-      <div>Home</div>
-      <Typography variant="h1" component='h3'>Header</Typography>
+      <Typography variant="h1" component='h3'>Home</Typography>
       </>
   )
 }
