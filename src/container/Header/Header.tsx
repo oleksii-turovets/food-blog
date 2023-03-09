@@ -21,7 +21,7 @@ import {
     faTwitter,
     faInstagram,
     faPinterest,
-    faYoutube
+    faYoutube,
 } from '@fortawesome/free-brands-svg-icons'
 import {
     faEnvelope,
@@ -30,9 +30,15 @@ import {
     faAngleDown,
     faAngleRight,
     faAngleLeft,
-    faMagnifyingGlass
+    faMagnifyingGlass,
 } from '@fortawesome/free-solid-svg-icons'
-import { faUser, faHeart, faClock, faComment } from '@fortawesome/free-regular-svg-icons'
+import {
+    faUser,
+    faHeart,
+    faClock,
+    faComment,
+} from '@fortawesome/free-regular-svg-icons'
+import Menu from 'components/Menu/Menu'
 
 type Props = {
     window?: () => Window
@@ -46,7 +52,7 @@ const navItems = [
     'Breakfast',
     'About',
     'Contact',
-    'Bookmarks'
+    'Bookmarks',
 ]
 
 const Header = (props: Props) => {
@@ -80,27 +86,69 @@ const Header = (props: Props) => {
 
     return (
         <div>
-            <AppBar position="static" component="nav" sx={{ height: 60 }}>
+            <AppBar position="static" component="div" sx={{ height: 60 }}>
                 <Container
                     component="div"
-                    sx={{ maxWidth: { xs: 'none', md: 940, lg: 1170 } }}
+                    sx={{
+                        maxWidth: { xs: 'none', md: 940, lg: 1170 },
+                        height: 1,
+                    }}
+                    disableGutters={true}
                 >
-                    <Toolbar variant="dense">
+                    <Toolbar
+                        variant="dense"
+                        disableGutters={true}
+                        sx={{ height: 1 }}
+                    >
                         <IconButton
                             edge="start"
                             color="inherit"
                             aria-label="menu"
                             onClick={handleDrawerToggle}
-                            sx={{ mr: 2, display: { sm: 'none' } }}
+                            sx={{
+                                ml: 15,
+                                mr: 0,
+                                p: 0,
+                                mt: 'auto',
+                                mb: 'auto',
+                                display: { sm: 'none' },
+                                color: 'primary.light',
+                            }}
                         >
-                            <MenuIcon />
+                            <MenuIcon
+                                sx={{ display: 'block', width: 24, p: 0 }}
+                            />
                         </IconButton>
-                        <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                            {navItems.map((item) => (
-                                <Button key={item} sx={{ color: '#fff' }}>
-                                    {item}
-                                </Button>
-                            ))}
+                        <Box
+                            sx={{
+                                display: { xs: 'none', sm: 'block' },
+                                height: 1,
+                            }}
+                        >
+                            <Menu />
+                        </Box>
+                        <Box
+                            sx={{
+                                display: { xs: 'none', sm: 'block' },
+                                height: 1,
+                            }}
+                        >
+                            <IconButton
+                                edge="start"
+                                color="inherit"
+                                aria-label="menu"
+                                sx={{
+                                    ml: 15,
+                                    mr: 0,
+                                    p: 0,
+                                    mt: 'auto',
+                                    mb: 'auto',
+                                    display: { xs: 'none', sm: 'block' },
+                                    color: 'primary.light',
+                                }}
+                            >
+                                <FontAwesomeIcon icon={faFacebookF} />
+                            </IconButton>
                         </Box>
                     </Toolbar>
                 </Container>
