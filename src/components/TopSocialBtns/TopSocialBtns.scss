@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+}
+
+.top-social-btns{
+    height: 100%;
+    flex-grow: 2;
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+
+    padding-right: 15px;
+
+    .top-social-btn-icon {
+        height: 14px;
+    }
+}
+
+@media(min-width: 700px) {
+    .top-social-btns {
+        display: flex;
+    }
+}
+@media(min-width: 970px) {
+    .top-social-btns {
+        padding-right: 0;
+    }
+}
