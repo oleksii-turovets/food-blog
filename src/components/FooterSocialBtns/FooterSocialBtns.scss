@@ -1,0 +1,21 @@
+.footer-social-btn{
+    min-width: none;
+    .footer-social-btn-icon{
+        margin-right: 0;
+    }
+    .footer-social-btn-text{
+        display: none;
+    }
+}
+
+@media(min-width: 970px) {
+    .footer-social-btn {
+            .footer-social-btn-icon {
+                margin-right: 13px;
+            }
+    
+            .footer-social-btn-text {
+                display: inline;
+            }
+        }
+}
