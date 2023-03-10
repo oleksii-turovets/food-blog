@@ -38,33 +38,39 @@ const theme = createTheme({
       fontSize: 24,
       lineHeight: 1.3,
       fontWeight: 400,
+      textTransform: 'uppercase'
     },
     h2: {
       fontFamily: 'Oswald',
       fontSize: 22,
       fontWeight: 400,
       lineHeight: 1.3,
+      textTransform: 'uppercase'
     },
     h3: {
       fontFamily: 'Oswald',
       fontSize: 20,
       lineHeight: 1.3,
+      textTransform: 'uppercase'
     },
     h4: {
       fontFamily: 'Oswald',
       fontSize: 18,
       lineHeight: 1.3,
+      textTransform: 'uppercase'
     },
     h5: {
       fontFamily: 'Oswald',
       fontSize: 16,
       lineHeight: 1.3,
+      textTransform: 'uppercase'
     },
     h6: {
       fontFamily: 'Oswald',
       fontSize: 14,
       fontWeight: 400,
       lineHeight: 1.3,
+      textTransform: 'uppercase'
     },
     subtitle1: {
       fontSize: 16,

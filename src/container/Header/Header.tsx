@@ -4,6 +4,7 @@ import {
     Container,
     IconButton,
     Toolbar,
+    Typography,
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useState } from 'react'
@@ -11,11 +12,11 @@ import Menu from 'components/Menu/Menu'
 import TopSearch from 'components/TopSearch/TopSearch'
 import TopSocialBtns from 'components/TopSocialBtns/TopSocialBtns'
 import AppBarDrawer from 'components/AppBarDrawer/AppBarDrawer'
+import Logo from 'components/Logo/Logo'
 
 type Props = {}
 
 const Header = (props: Props) => {
-
     const [mobileOpen, setMobileOpen] = useState(false)
 
     const handleDrawerToggle = () => {
@@ -74,9 +75,16 @@ const Header = (props: Props) => {
                     </Toolbar>
                 </Container>
             </AppBar>
+            <Box component="div" marginBottom={20} marginTop={20} padding={20}>
+                <Logo align="center" />
+                <Typography variant="h6" component="div" align="center" marginTop={15}>
+                    My little vibrant kitchen
+                </Typography>
+            </Box>
+
             <AppBarDrawer
                 handleDrawerToggle={handleDrawerToggle}
-                mobileOpen= {mobileOpen}
+                mobileOpen={mobileOpen}
             />
         </div>
     )
