@@ -1,5 +1,6 @@
 import { Container, Typography, Grid } from '@mui/material'
 import useTheme from '@mui/material/styles/useTheme'
+import FooterInstaPosts from 'components/FooterInstaPosts/FooterInstaPosts'
 import FooterSocialBtns from 'components/FooterSocialBtns/FooterSocialBtns'
 
 type Props = {}
@@ -7,6 +8,7 @@ const Footer = (props: Props) => {
     const theme = useTheme()
     return (
         <div style={{ backgroundColor: theme.palette.primary.main }}>
+            <FooterInstaPosts/>
             <Container
                 component="div"
                 sx={{
