@@ -4,9 +4,14 @@ import FooterInstaPost from './FooterInstaPost'
 type Props = {}
 const FooterInstaPosts = (props: Props) => {
     return (
-        <ul className='footer-insta-posts'>
+        <ul className="footer-insta-posts">
             {instagramFooterArray.map(({ id, image, postLink }) => (
-                <FooterInstaPost id={id} image={image} postLink={postLink} />
+                <FooterInstaPost
+                    id={id}
+                    image={image}
+                    postLink={postLink}
+                    key={id}
+                />
             ))}
         </ul>
     )

@@ -25,7 +25,7 @@ const Header = (props: Props) => {
 
     return (
         <div>
-            <AppBar position="static" component="div" sx={{ height: 60 }}>
+            <AppBar position="fixed" component="div" sx={{ height: 60 }}>
                 <Container
                     component="div"
                     sx={{
@@ -75,9 +75,15 @@ const Header = (props: Props) => {
                     </Toolbar>
                 </Container>
             </AppBar>
+            <Toolbar sx={{ height: 60, minHeight:{xs: 50} }} />
             <Box component="div" marginBottom={20} marginTop={20} padding={20}>
                 <Logo align="center" />
-                <Typography variant="h6" component="div" align="center" marginTop={15}>
+                <Typography
+                    variant="h6"
+                    component="div"
+                    align="center"
+                    marginTop={15}
+                >
                     My little vibrant kitchen
                 </Typography>
             </Box>

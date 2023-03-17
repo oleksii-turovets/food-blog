@@ -4,6 +4,7 @@ import BreakfastPage from 'pages/BreakfastPage/BreakfastPage'
 import ContactPage from 'pages/ContactPage/ContactPage'
 import FeaturedPage from 'pages/FeaturedPage/FeaturedPage'
 import Home from 'pages/Home/Home'
+import PageNotFound from 'pages/PageNotFound/PageNotFound'
 import RecipesPage from 'pages/RecipesPage/RecipesPage'
 import { Route, Routes } from 'react-router-dom'
 
@@ -24,6 +25,10 @@ const Main = (props: Props) => {
                 <Route
                     path="/category/bookmarks"
                     element={<BookmarksPage />}
+                />
+                <Route
+                    path="*"
+                    element={<PageNotFound />}
                 />
             </Routes>
         </>
