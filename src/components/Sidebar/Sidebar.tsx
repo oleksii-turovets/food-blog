@@ -1,6 +1,7 @@
 import { IconButton, Typography } from '@mui/material'
 import Button from '@mui/material/Button'
 import SidebarBannerAds from 'components/SidebarBannerAds/SidebarBannerAds'
+import SidebarCategories from 'components/SidebarCategories/SidebarCategories'
 import SidebarInstaPosts from 'components/SidebarInstaPosts/SidebarInstaPosts'
 import SidebarSearch from 'components/SidebarSearch/SidebarSearch'
 import SidebarSocialBtns from 'components/SidebarSocialBtns/SidebarSocialBtns'
@@ -191,7 +192,9 @@ const Sidebar = (props: Props) => {
                         Categories
                     </Typography>
                 </div>
-                <div className="content">Categories list</div>
+                <div className="content">
+                    <SidebarCategories/>
+                </div>
             </div>
         </aside>
     )

@@ -49,7 +49,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -110,7 +110,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -171,7 +171,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -232,7 +232,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -293,7 +293,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -354,7 +354,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -415,7 +415,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -476,7 +476,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -537,7 +537,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -598,7 +598,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -659,7 +659,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -720,7 +720,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -781,7 +781,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -842,7 +842,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -903,7 +903,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -964,7 +964,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -1025,7 +1025,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -1086,7 +1086,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -1147,7 +1147,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },
@@ -1208,7 +1208,7 @@ const articlesArray: Article[] = [
             author: 'Penci',
             date: {
                 year: 2018,
-                monthNumber: 08,
+                monthNumber: 8,
                 monthName: 'August',
                 day: 22,
             },

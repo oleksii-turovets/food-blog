@@ -1,0 +1,77 @@
+.sidebar-categories-list{
+    box-sizing: border-box;
+
+    list-style: none;
+    padding-left: 0;
+    font-size: 16px;
+    line-height: 1.4;
+    font-family: Crimson Text;
+    font-weight: 400;
+    margin: 0;
+    
+    li{
+        padding-bottom: 11px;
+        margin-bottom: 12px;
+        border-bottom: 1px solid #eeeeee;
+
+        a {
+            display: block;
+            position: relative;
+
+                text-decoration: none;
+                color: #313131;
+        
+                &:hover {
+                    color: #E57373;
+
+                    .category-item-number{
+                        color: #313131;
+                    }
+                }
+
+                .category-item-icon{
+                    padding-right: 10px;
+                    
+                    .icon-fa-angle-right {
+                        font-size: 11px;
+                        padding-bottom: 1px;
+                    }
+                }
+
+                .category-item-name{
+
+                }
+
+                .category-item-number{
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+
+            }
+    }
+    >li:last-child{
+        padding-bottom: 0;
+    }
+    li:last-child{
+        margin-bottom: 0;
+        border: none;
+    }
+    
+
+
+    .category-item:has(.sidebar-recipes-cat-list:hover):hover{
+        color:#313131;
+    }
+
+
+    
+
+    .sidebar-recipes-cat-list{
+        list-style: none;
+        padding-left: 20px;
+        padding-top: 12px;
+        margin-top: 11px;
+        border-top: 1px solid #eeeeee;
+    }
+}
