@@ -1,4 +1,5 @@
-.footer-insta-posts{
+.footer-insta-posts,
+.sidebar-insta-posts{
     box-sizing: border-box;
     
     list-style: none;
@@ -9,9 +10,6 @@
     flex-wrap: wrap;
 
     li{
-        max-width: 25%;
-        flex: 0 0 25%;
-
         a{
             display: block;
             width: 100%;
@@ -63,11 +61,47 @@
     }
 }
 
+.footer-insta-posts{
+    li {
+        max-width: 25%;
+        flex: 0 0 25%;
+    }
+}
+.sidebar-insta-posts{
+    margin: -5px;
+    li {
+        max-width: 50%;
+        flex: 0 0 50%;
+        padding: 5px;
+    }
+}
+@media(min-width: 400px) {
+    .sidebar-insta-posts {
+        li {
+            max-width: 33.3333%;
+            flex: 0 0 33.3333%;
+        }
+    }
+}
+@media(min-width: 700px) {
+    .sidebar-insta-posts {
+        li {
+            max-width: 16.6666%;
+            flex: 0 0 16.6666%;
+        }
+    }
+}
 @media(min-width: 970px) {
     .footer-insta-posts {
             li {
                 max-width: 12.5%;
                 flex: 0 0 12.5%;
             }
+    }
+    .sidebar-insta-posts {
+        li {
+            max-width: 50%;
+            flex: 0 0 50%;
         }
+    }
 }

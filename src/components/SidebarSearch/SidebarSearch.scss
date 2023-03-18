@@ -1,0 +1,47 @@
+.sidebar-search {
+    box-sizing: border-box;
+    position: relative;
+
+    input{
+        width: 100%;
+        padding: 12px 40px 12px 20px;
+        border: 1px solid #eeeeee;
+        font-family: Crimson Text;
+        font-size: 13px;
+        color: #757575;
+
+        &::-webkit-search-decoration,
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-results-button,
+        &::-webkit-search-results-decoration {
+            display: none;
+        }
+        &::-ms-clear, &::-ms-reveal {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        &:focus-visible{
+            outline: none;
+        }
+    }
+
+    .sidebar-search-btn{
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+
+
+
+        .sidebar-search-icon-glass{
+            opacity: 0.5;
+            font-size: 14px;
+            line-height: 1;
+            &:hover{
+                opacity: 0.7;
+            }
+        }
+    }
+}

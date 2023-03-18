@@ -7,7 +7,6 @@ const FooterInstaPosts = (props: Props) => {
         <ul className="footer-insta-posts">
             {instagramFooterArray.map(({ id, image, postLink }) => (
                 <FooterInstaPost
-                    id={id}
                     image={image}
                     postLink={postLink}
                     key={id}
