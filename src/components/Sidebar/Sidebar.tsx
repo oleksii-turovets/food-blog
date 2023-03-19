@@ -3,6 +3,7 @@ import Button from '@mui/material/Button'
 import SidebarBannerAds from 'components/SidebarBannerAds/SidebarBannerAds'
 import SidebarCategories from 'components/SidebarCategories/SidebarCategories'
 import SidebarInstaPosts from 'components/SidebarInstaPosts/SidebarInstaPosts'
+import SidebarRecentPosts from 'components/SidebarRecentPosts/SidebarRecentPosts'
 import SidebarSearch from 'components/SidebarSearch/SidebarSearch'
 import SidebarSocialBtns from 'components/SidebarSocialBtns/SidebarSocialBtns'
 import './Sidebar.scss'
@@ -129,7 +130,6 @@ const Sidebar = (props: Props) => {
                             placeholder="Email..."
                             required
                         />
-                        {/* <input type="submit" value="Subscribe" /> */}
                         <Button
                             className="sidebar-subscribe-btn"
                             color="inherit"
@@ -173,7 +173,9 @@ const Sidebar = (props: Props) => {
                         Recent posts
                     </Typography>
                 </div>
-                <div className="content">Posts</div>
+                <div className="content">
+                    <SidebarRecentPosts/>
+                </div>
             </div>
             <div className="sidebar-option sidebar-ads">
                 <div className="content">
