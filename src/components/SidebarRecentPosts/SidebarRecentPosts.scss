@@ -37,3 +37,20 @@
         }
     }
 }
+
+@media(min-width: 550px){
+    .sidebar-recent-posts-list {
+        .post{
+            max-width: 33.3333%;
+            flex: 0 0 33.3333%;
+        }
+    }
+}
+@media(min-width: 970px){
+    .sidebar-recent-posts-list {
+        .post{
+            max-width: 50%;
+            flex: 0 0 50%;
+        }
+    }
+}
