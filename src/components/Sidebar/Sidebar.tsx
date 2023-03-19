@@ -5,6 +5,7 @@ import SidebarCategories from 'components/SidebarCategories/SidebarCategories'
 import SidebarInstaPosts from 'components/SidebarInstaPosts/SidebarInstaPosts'
 import SidebarRecentPosts from 'components/SidebarRecentPosts/SidebarRecentPosts'
 import SidebarSearch from 'components/SidebarSearch/SidebarSearch'
+import SidebarSlider from 'components/SidebarSlider/SidebarSlider'
 import SidebarSocialBtns from 'components/SidebarSocialBtns/SidebarSocialBtns'
 import './Sidebar.scss'
 
@@ -94,7 +95,9 @@ const Sidebar = (props: Props) => {
                         Featured recipes
                     </Typography>
                 </div>
-                <div className="content">Slider</div>
+                <div className="content">
+                    <SidebarSlider/>
+                </div>
             </div>
             <div className="sidebar-option sidebar-subscribe">
                 <div className="sidebar-option-title">

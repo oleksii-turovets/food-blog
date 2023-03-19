@@ -6,10 +6,9 @@ import { StyledEngineProvider } from '@mui/material/styles'
 import { ThemeProvider } from '@mui/material'
 import theme from 'utils/theme'
 
-
-
 type Props = {}
 const App = (props: Props) => {
+
     return (
         <StyledEngineProvider injectFirst>
             <ThemeProvider theme={theme}>
