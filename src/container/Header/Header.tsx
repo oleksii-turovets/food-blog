@@ -84,7 +84,7 @@ const Header = (props: Props) => {
                     align="center"
                     marginTop={15}
                 >
-                    My little vibrant kitchen
+                    My little virant kitchen
                 </Typography>
             </Box>
 

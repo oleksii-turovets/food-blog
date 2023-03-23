@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material"
 import { Container } from "@mui/system"
 import HomeCategories from "components/HomeCategories/HomeCategories"
 import HomeSlider from "components/HomeSlider/HomeSlider"
@@ -8,9 +7,6 @@ type Props = {}
 const Home = (props: Props) => {
   return (
       <>
-          <Typography variant="h1" component="h3">
-              Home
-          </Typography>
           <HomeSlider />
           <Container
               component="div"
