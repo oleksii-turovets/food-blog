@@ -1,4 +1,3 @@
-import { Typography } from '@mui/material'
 import SidebarCategoriesItem from './SidebarCategoriesItem'
 import './SidebarCategories.scss'
 
