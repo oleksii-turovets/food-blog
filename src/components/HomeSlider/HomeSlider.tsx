@@ -26,18 +26,7 @@ const HomeSlider = (props: Props) => {
                 ]}
                 spaceBetween={15}
                 slidesPerView={1}
-                breakpoints={{
-                    930: {
-                        slidesPerView: 2,
-                        spaceBetween: 10,
-                        centeredSlides: true,
-                    },
-                    1810: {
-                        slidesPerView: 'auto',
-                        spaceBetween: 10,
-                        centeredSlides: true,
-                    },
-                }}
+                centeredSlides={true}
                 navigation={{
                     prevEl: '.home-slider-nav .btn-prev',
                     nextEl: '.home-slider-nav .btn-next',

@@ -1,4 +1,4 @@
-import { Navigation, A11y, Virtual } from 'swiper'
+import { Navigation, A11y, Virtual, Autoplay } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
@@ -16,7 +16,7 @@ const SidebarSlider = (props: Props) => {
     return (
         <Swiper
             className="sidebar-slider"
-            modules={[Navigation, A11y, Virtual]}
+            modules={[Navigation, A11y, Virtual, Autoplay]}
             spaceBetween={0}
             slidesPerView={1}
             breakpoints={{
@@ -40,7 +40,10 @@ const SidebarSlider = (props: Props) => {
             virtual
             loop={true}
             speed={1000}
-            autoplay={{ delay: 5000 }}
+            autoplay={{
+                delay: 5000,
+                pauseOnMouseEnter: true,
+            }}
         >
             {articlesArray
                 .filter((article) => article.category?.includes('featured'))
