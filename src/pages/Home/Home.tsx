@@ -1,5 +1,6 @@
 import { Container } from "@mui/system"
 import HomeCategories from "components/HomeCategories/HomeCategories"
+import HomePageContent from "components/HomePageContent/HomePageContent"
 import HomeSlider from "components/HomeSlider/HomeSlider"
 import PageContent from "components/PageContent/PageContent"
 
@@ -7,7 +8,7 @@ type Props = {}
 const Home = (props: Props) => {
   return (
       <>
-          {/* <HomeSlider /> */}
+          <HomeSlider />
           <Container
               component="div"
               sx={{
@@ -19,7 +20,9 @@ const Home = (props: Props) => {
               disableGutters={true}
           >
               <HomeCategories />
-              <PageContent/>
+              <PageContent>
+                  <HomePageContent/>
+              </PageContent>
           </Container>
       </>
   )

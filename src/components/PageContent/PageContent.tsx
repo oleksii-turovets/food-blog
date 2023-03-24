@@ -1,10 +1,11 @@
 import { Grid } from '@mui/material'
-import MainContent from 'components/MainContent/MainContent'
 import Sidebar from 'components/Sidebar/Sidebar'
 
-type Props = {}
+type Props = {
+    children?: React.ReactNode
+}
 
-const PageContent = (props: Props) => {
+const PageContent = ({children}: Props) => {
     return (
         <Grid
             container
@@ -13,7 +14,7 @@ const PageContent = (props: Props) => {
             paddingBottom={{ xs: 80, md: 70 }}
         >
             <Grid item xs={12} md={8}>
-                <MainContent/>
+                {children}
             </Grid>
             <Grid item xs={12} md={4} paddingLeft={{xs: 0, md: 50}}>
                 <Sidebar/>

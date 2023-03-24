@@ -8,7 +8,7 @@ const Footer = (props: Props) => {
     const theme = useTheme()
     return (
         <div style={{ backgroundColor: theme.palette.primary.main }}>
-            <FooterInstaPosts/>
+            <FooterInstaPosts />
             <Container
                 component="div"
                 sx={{
@@ -34,6 +34,12 @@ const Footer = (props: Props) => {
                     <span style={{ color: theme.palette.text.hint }}>
                         PenciDesign
                     </span>
+                    <br />
+                    Copied by{' '}
+                    <span style={{ color: theme.palette.text.hint }}>
+                        Oleksii Turovets
+                    </span>{' '}
+                    for Educational Purposes
                 </Typography>
             </Container>
         </div>
