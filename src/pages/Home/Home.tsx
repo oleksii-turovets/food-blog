@@ -7,7 +7,7 @@ type Props = {}
 const Home = (props: Props) => {
   return (
       <>
-          <HomeSlider />
+          {/* <HomeSlider /> */}
           <Container
               component="div"
               sx={{
