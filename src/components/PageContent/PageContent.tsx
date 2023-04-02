@@ -16,7 +16,7 @@ const PageContent = ({children}: Props) => {
             <Grid item xs={12} md={8}>
                 {children}
             </Grid>
-            <Grid item xs={12} md={4} paddingLeft={{xs: 0, md: 50}}>
+            <Grid item xs={12} md={4} paddingLeft={{xs: 0, md: 50}} sx={{position: 'relative'}}>
                 <Sidebar/>
             </Grid>
         </Grid>

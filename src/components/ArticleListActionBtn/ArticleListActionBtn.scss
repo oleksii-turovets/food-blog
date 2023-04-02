@@ -1,0 +1,52 @@
+@import './src/utils/variables';
+
+.action-links-btn {
+    transition: color 0.3s;
+    position: relative;
+
+    .link-label {
+        position: absolute;
+        bottom: -45px;
+        width: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+
+        font-size: 9px;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 400;
+        background: $text-primary;
+        color: $secondary-contrastText;
+        height: 20px;
+        line-height: 20px;
+        white-space: nowrap;
+        text-align: center;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition: all .2s ease-in-out;
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -7px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 7px solid $text-primary;
+        }
+    }
+
+    &:hover .link-label {
+        opacity: 1;
+        visibility: visible;
+        bottom: -30px;
+    }
+}

@@ -1,4 +1,6 @@
-import { Container, Typography, Grid } from '@mui/material'
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Container, Typography, Button } from '@mui/material'
 import useTheme from '@mui/material/styles/useTheme'
 import FooterInstaPosts from 'components/FooterInstaPosts/FooterInstaPosts'
 import FooterSocialBtns from 'components/FooterSocialBtns/FooterSocialBtns'
@@ -15,6 +17,7 @@ const Footer = (props: Props) => {
                     maxWidth: { xs: 'none', md: 940, lg: 1170 },
                     paddingRight: { xs: 15, md: 0 },
                     paddingLeft: { xs: 15, md: 0 },
+                    position: 'relative',
                 }}
                 disableGutters={true}
             >
@@ -41,6 +44,37 @@ const Footer = (props: Props) => {
                     </span>{' '}
                     for Educational Purposes
                 </Typography>
+                <Button
+                    onClick={() => {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth',
+                        })
+                    }}
+                    sx={{
+                        position: 'absolute',
+                        bottom: '15px',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                    }}
+                >
+                    <Typography
+                        component={'div'}
+                        variant="h6"
+                        fontSize={12}
+                        lineHeight={1}
+                        sx={{
+                            color: 'primary.light',
+                            transition: 'color 0.3s',
+                            '&:hover': { color: 'primary.contrastText' },
+                        }}
+                    >
+                        <Typography component={'div'} variant='inherit' mb={2}>
+                            <FontAwesomeIcon icon={faAngleUp} />
+                        </Typography>
+                        Back to top
+                    </Typography>
+                </Button>
             </Container>
         </div>
     )

@@ -32,6 +32,7 @@ const HomeSlider = (props: Props) => {
                     nextEl: '.home-slider-nav .btn-next',
                 }}
                 loop={true}
+                loopedSlides={3}
                 speed={1000}
                 autoplay={{
                     delay: 10000,

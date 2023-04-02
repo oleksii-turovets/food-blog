@@ -14,7 +14,8 @@
 .home-slider {
     box-sizing: border-box;
     position: relative;
-
+    overflow: clip;
+    
     padding: 0 15px;
     
     .featured-post {
