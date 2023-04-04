@@ -9,7 +9,7 @@ type Props = {}
 const Footer = (props: Props) => {
     const theme = useTheme()
     return (
-        <div style={{ backgroundColor: theme.palette.primary.main }}>
+        <footer style={{ backgroundColor: theme.palette.primary.main }}>
             <FooterInstaPosts />
             <Container
                 component="div"
@@ -76,7 +76,7 @@ const Footer = (props: Props) => {
                     </Typography>
                 </Button>
             </Container>
-        </div>
+        </footer>
     )
 }
 export default Footer

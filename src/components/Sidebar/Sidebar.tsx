@@ -1,4 +1,4 @@
-import { IconButton, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import Button from '@mui/material/Button'
 import SidebarBannerAds from 'components/SidebarBannerAds/SidebarBannerAds'
 import SidebarCategories from 'components/SidebarCategories/SidebarCategories'
@@ -27,7 +27,7 @@ const Sidebar = (props: Props) => {
                     </Typography>
                 </div>
                 <div className="img">
-                    <img src="./images/ava.jpg" alt="avatar" />
+                    <img src="/images/ava.jpg" alt="avatar" />
                 </div>
                 <div className="content">
                     <Typography

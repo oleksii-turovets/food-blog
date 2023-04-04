@@ -24,7 +24,7 @@ const Header = (props: Props) => {
     }
 
     return (
-        <div>
+        <header style={{ borderBottom: '1px solid #eeeeee' }}>
             <AppBar position="fixed" component="div" sx={{ height: 60 }}>
                 <Container
                     component="div"
@@ -75,7 +75,7 @@ const Header = (props: Props) => {
                     </Toolbar>
                 </Container>
             </AppBar>
-            <Toolbar sx={{ height: 60, minHeight:{xs: 50} }} />
+            <Toolbar sx={{ height: 60, minHeight: { xs: 50 } }} />
             <Box component="div" marginBottom={20} marginTop={20} padding={20}>
                 <Logo align="center" />
                 <Typography
@@ -92,7 +92,7 @@ const Header = (props: Props) => {
                 handleDrawerToggle={handleDrawerToggle}
                 mobileOpen={mobileOpen}
             />
-        </div>
+        </header>
     )
 }
 export default Header
