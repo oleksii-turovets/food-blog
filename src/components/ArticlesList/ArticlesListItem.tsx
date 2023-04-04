@@ -35,7 +35,7 @@ const ArticlesListItem = ({
 
     return (
         <div className="article-list-item">
-            <Link to={`/recipes/${id}`} className="article-link-img">
+            <Link to={`/category/recipes/${id}`} className="article-link-img">
                 <img src={image} alt="recipe-photo" style={{ width: '100%' }} />
             </Link>
             <div className="article-head">
@@ -64,7 +64,7 @@ const ArticlesListItem = ({
                         </Link>
                     ))}
                 </div>
-                <Link to={`/recipes/${id}`} className="title">
+                <Link to={`/category/recipes/${id}`} className="title">
                     <Typography
                         variant={'h4'}
                         component={'h5'}
@@ -145,20 +145,20 @@ const ArticlesListItem = ({
                         Likes
                     </ArticleListActionBtn>
                     <ArticleListActionBtn
-                        href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.origin}/recipes/${id}`}
+                        href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.origin}/category/recipes/${id}`}
                         icon={faFacebookF}
                     >
                         Facebook
                     </ArticleListActionBtn>
                     <ArticleListActionBtn
-                        href={`https://twitter.com/intent/tweet?text=Check%20out%20this%20article:%20${window.location.origin}/recipes/${id}`}
+                        href={`https://twitter.com/intent/tweet?text=Check%20out%20this%20article:%20${window.location.origin}/category/recipes/${id}`}
                         icon={faTwitter}
                     >
                         Twitter
                     </ArticleListActionBtn>
                     <ArticleListActionBtn
                         href={`https://www.pinterest.com/pin/create/button/?url=${encodeURI(
-                            `${window.location.origin}/recipes/${id}`
+                            `${window.location.origin}/category/recipes/${id}`
                         )}&media=${encodeURI(
                             `${window.location.origin}${image}`
                         )}&description=${encodeURI(`${title}`)}`}
@@ -169,7 +169,7 @@ const ArticlesListItem = ({
                     <ArticleListActionBtn
                         href={`mailto:?subject=${encodeURI(`${title}`)}&BODY=${
                             window.location.origin
-                        }/recipes/${id}`}
+                        }/category/recipes/${id}`}
                         icon={faEnvelope}
                     >
                         Email

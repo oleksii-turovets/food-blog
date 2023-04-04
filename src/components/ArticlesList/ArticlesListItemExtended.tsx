@@ -66,7 +66,7 @@ const ArticlesListItemExtended = ({
                         </Link>
                     ))}
                 </div>
-                <Link to={`/recipes/${id}`} className="title">
+                <Link to={`/category/recipes/${id}`} className="title">
                     <Typography
                         component={'h5'}
                         align={'center'}
@@ -107,7 +107,7 @@ const ArticlesListItemExtended = ({
                     </Link>
                 </Typography>
             </div>
-            <Link to={`/recipes/${id}`} className="article-link-img">
+            <Link to={`/category/recipes/${id}`} className="article-link-img">
                 <img src={image} alt="recipe-photo" style={{ width: '100%' }} />
             </Link>
             <div className="text-content">
@@ -119,7 +119,7 @@ const ArticlesListItemExtended = ({
                 >
                     {desc}
                 </Typography>
-                <Link to={`/recipes/${id}`} className="more-link">
+                <Link to={`/category/recipes/${id}`} className="more-link">
                     <Typography
                         variant="h6"
                         component={'div'}
@@ -166,7 +166,7 @@ const ArticlesListItemExtended = ({
                     >
                         |
                     </Typography>
-                    <Link to={`/recipes/${id}/#respond`}>
+                    <Link to={`/category/recipes/${id}/#respond`}>
                         <Typography
                             component={'span'}
                             variant={'inherit'}
@@ -197,20 +197,20 @@ const ArticlesListItemExtended = ({
                             Likes
                         </ArticleListActionBtn>
                         <ArticleListActionBtn
-                            href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.origin}/recipes/${id}`}
+                            href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.origin}/category/recipes/${id}`}
                             icon={faFacebookF}
                         >
                             Facebook
                         </ArticleListActionBtn>
                         <ArticleListActionBtn
-                            href={`https://twitter.com/intent/tweet?text=Check%20out%20this%20article:%20${window.location.origin}/recipes/${id}`}
+                            href={`https://twitter.com/intent/tweet?text=Check%20out%20this%20article:%20${window.location.origin}/category/recipes/${id}`}
                             icon={faTwitter}
                         >
                             Twitter
                         </ArticleListActionBtn>
                         <ArticleListActionBtn
                             href={`https://www.pinterest.com/pin/create/button/?url=${encodeURI(
-                                `${window.location.origin}/recipes/${id}`
+                                `${window.location.origin}/category/recipes/${id}`
                             )}&media=${encodeURI(
                                 `${window.location.origin}${image}`
                             )}&description=${encodeURI(`${title}`)}`}
@@ -221,7 +221,9 @@ const ArticlesListItemExtended = ({
                         <ArticleListActionBtn
                             href={`mailto:?subject=${encodeURI(
                                 `${title}`
-                            )}&BODY=${window.location.origin}/recipes/${id}`}
+                            )}&BODY=${
+                                window.location.origin
+                            }/category/recipes/${id}`}
                             icon={faEnvelope}
                         >
                             Email

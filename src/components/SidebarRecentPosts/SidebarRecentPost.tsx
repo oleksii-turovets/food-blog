@@ -12,19 +12,19 @@ type Props = {
 const SidebarRecentPost = ({ id, image, title, month, day, year }: Props) => {
     return (
         <div className="post">
-            <Link to={`/recipes/${id}`} className="post-link-img">
+            <Link to={`/category/recipes/${id}`} className="post-link-img">
                 <img src={image} alt="recipe-photo" style={{ width: '100%' }} />
             </Link>
-            <Link to={`/recipes/${id}`} className="post-link-title">
+            <Link to={`/category/recipes/${id}`} className="post-link-title">
                 <Typography
                     variant={'h6'}
                     component={'h5'}
                     textTransform={'capitalize'}
                     sx={{
-                        color:'text.primary',
+                        color: 'text.primary',
                         '&:hover': {
-                            color: 'text.hint'
-                        }
+                            color: 'text.hint',
+                        },
                     }}
                 >
                     {title}
