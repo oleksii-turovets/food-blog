@@ -5,10 +5,15 @@ import CategoryPage from 'pages/CategoryPage/CategoryPage'
 import ContactPage from 'pages/ContactPage/ContactPage'
 import Home from 'pages/Home/Home'
 import PageNotFound from 'pages/PageNotFound/PageNotFound'
-import { Route, Routes } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Route, Routes, useLocation } from 'react-router-dom'
 
 type Props = {}
 const Main = (props: Props) => {
+    const location = useLocation()
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [location])
     return (
         <>
             <Routes>

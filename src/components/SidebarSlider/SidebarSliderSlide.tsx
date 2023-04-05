@@ -10,7 +10,7 @@ type Props = {
 const SidebarSliderSlide = ({ id, image, title }: Props) => {
     return (
         <div className="featured-post">
-            <Link to={`/recipes/${id}`} className="featured-post-link">
+            <Link to={`/category/recipes/${id}`} className="featured-post-link">
                 <img src={image} alt="recipe-photo" style={{ width: '100%' }} />
                 <Typography
                     variant={'h4'}
