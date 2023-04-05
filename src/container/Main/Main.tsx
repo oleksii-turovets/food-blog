@@ -22,10 +22,6 @@ const Main = (props: Props) => {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/category/">
                     <Route path=":categoryName" element={<CategoryPage />} />
-                    <Route
-                        path="recipes/:categoryName"
-                        element={<CategoryPage />}
-                    />
                     <Route path="recipes/:id" element={<ArticlePage />} />
                     <Route path="bookmarks" element={<BookmarksPage />} />
                 </Route>

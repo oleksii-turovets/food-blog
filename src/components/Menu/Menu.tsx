@@ -24,7 +24,7 @@ const Menu = (props: Props) => {
                   className="icon-fa-angle-down"
               />
           </MenuItem>
-          <MenuItem to="/category/recipes/breakfast" hasSubElements={true}>
+          <MenuItem to="/category/breakfast" hasSubElements={true}>
               Breakfast
               <FontAwesomeIcon
                   icon={faAngleDown}

@@ -1,4 +1,4 @@
-import { Typography, Button } from '@mui/material'
+import { Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -44,11 +44,7 @@ const ArticlesListItemExtended = ({
                 <div className="categories">
                     {categoryList?.map((category, index) => (
                         <Link
-                            to={
-                                category === 'featured'
-                                    ? `/category/${category}`
-                                    : `/category/recipes/${category}`
-                            }
+                            to={`/category/${category}`}
                             className="category-link"
                             key={index}
                         >

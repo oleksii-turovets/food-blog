@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-
 import { Typography } from '@mui/material'
 import articlesArray from 'utils/articlesArray'
 
@@ -10,10 +9,7 @@ type Props = {
 const HomeCategoriesItem = ({ category }: Props) => {
     return (
         <li className="category">
-            <Link
-                to={`/category/recipes/${category}`}
-                className="category-link"
-            >
+            <Link to={`/category/${category}`} className="category-link">
                 <img
                     src={
                         articlesArray

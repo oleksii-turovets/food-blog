@@ -2,9 +2,7 @@ import articlesArray, { Article } from 'utils/articlesArray'
 import { useState } from 'react'
 import ArticlesListItem from 'components/ArticlesList/ArticlesListItem'
 import ArticlesListItemExtended from 'components/ArticlesList/ArticlesListItemExtended'
-import { Typography, Button } from '@mui/material'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faRefresh } from '@fortawesome/free-solid-svg-icons'
+import LoadMoreArticles from 'components/LoadMoreArticles/LoadMoreArticles'
 
 type Props = {}
 
@@ -83,67 +81,18 @@ const HomePageContent = (props: Props) => {
                         desc={article.content?.description.firstParagraph}
                     />
                 ))}
-            <div
-                className="load-more"
-                style={{ padding: '0 15px', width: '100%' }}
-            >
-                <Button
-                    variant="outlined"
-                    onClick={() =>
-                        changeNumberOfArticles(
-                            numberOfArticles.shownArticlesNumber + 6
-                        )
-                    }
-                    disabled={
-                        numberOfArticles.shownArticlesNumber >=
-                        sortedArticleArr.length
-                    }
-                    sx={{
-                        display: 'block',
-                        padding: '11px 10px',
-                        maxWidth: '400px',
-                        width: '100%',
-                        margin: '0 auto',
-                        border: '1px solid #eeeeee',
-                        trasition: 'all .25s',
-                        color: 'primary.light',
-                        background: 'none',
-                        '&:hover': {
-                            color: 'secondary.main',
-                            borderColor: 'secondary.main',
-                            background: 'none',
-                        },
-                    }}
-                >
-                    {numberOfArticles.shownArticlesNumber >=
-                    sortedArticleArr.length ? (
-                        <Typography
-                            component={'div'}
-                            variant="h6"
-                            fontSize={12}
-                        >
-                            Sorry, no more posts
-                        </Typography>
-                    ) : (
-                        <Typography
-                            component={'div'}
-                            variant="h6"
-                            fontSize={12}
-                        >
-                            Load more posts
-                            <FontAwesomeIcon
-                                icon={faRefresh}
-                                style={{ marginLeft: '15px' }}
-                                className={
-                                    isLoadingArticles
-                                        ? 'loading-circle-active'
-                                        : 'loading-circle'
-                                }
-                            />
-                        </Typography>
-                    )}
-                </Button>
-            </div>
+            <LoadMoreArticles
+                onClick={() =>
+                    changeNumberOfArticles(
+                        numberOfArticles.shownArticlesNumber + 6
+                    )
+                }
+                disabled={
+                    numberOfArticles.shownArticlesNumber >=
+                    sortedArticleArr.length
+                }
+                isLoadingArticles={isLoadingArticles}
+            />
         </div>
     )
 }

@@ -20,25 +20,25 @@ const SidebarCategories = (props: Props) => {
                 <object>
                     <ul className="sidebar-recipes-cat-list">
                         <SidebarCategoriesItem
-                            to="/category/recipes/baking"
+                            to="/category/baking"
                             category={['baking']}
                         >
                             Baking
                         </SidebarCategoriesItem>
                         <SidebarCategoriesItem
-                            to="/category/recipes/breakfast"
+                            to="/category/breakfast"
                             category={['breakfast']}
                         >
                             Breakfast
                         </SidebarCategoriesItem>
                         <SidebarCategoriesItem
-                            to="/category/recipes/drinks"
+                            to="/category/drinks"
                             category={['drinks']}
                         >
                             Drinks
                         </SidebarCategoriesItem>
                         <SidebarCategoriesItem
-                            to="/category/recipes/vegan"
+                            to="/category/vegan"
                             category={['vegan']}
                         >
                             Vegan
