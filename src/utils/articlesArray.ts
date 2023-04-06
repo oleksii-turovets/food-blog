@@ -1,5 +1,5 @@
 export type Article = {
-    id?: number
+    id: number
     title?: string
     img?: string
     category?: string[]
@@ -1260,4 +1260,13 @@ const articlesArray: Article[] = [
         },
     },
 ]
+
+export const getArticlesObject = (array: Article[]) =>
+    array.reduce((object, article) => ({
+    ...object,
+    [article.id]: article,
+    }), {})
+
+export const articlesObject: {[id: number]: Article} = getArticlesObject (articlesArray)
+
 export default articlesArray

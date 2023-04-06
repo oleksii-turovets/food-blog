@@ -1,4 +1,5 @@
 import { Typography } from '@mui/material'
+import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -17,6 +18,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import './ArticleList.scss'
 import ArticleListActionBtn from 'components/ArticleListActionBtn/ArticleListActionBtn'
+import ArticleCategoriesList from 'components/ArticleCategoriesList/ArticleCategoriesList';
 
 type Props = {
     id?: number
@@ -38,30 +40,19 @@ const ArticlesListItemExtended = ({
 }: Props) => {
     const isLiked = true
 
+    const scrollWithOffset = (el:HTMLElement) => {
+        const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset
+        const yOffset = -80
+        window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' })
+    }
+
     return (
         <div className="article-list-item-extended">
             <div className="article-head">
-                <div className="categories">
-                    {categoryList?.map((category, index) => (
-                        <Link
-                            to={`/category/${category}`}
-                            className="category-link"
-                            key={index}
-                        >
-                            <Typography
-                                component={'div'}
-                                fontSize={13}
-                                lineHeight={1.2}
-                                textTransform={'capitalize'}
-                                color={'text.hint'}
-                                align={'center'}
-                                className="category-name"
-                            >
-                                {category}
-                            </Typography>
-                        </Link>
-                    ))}
-                </div>
+                <ArticleCategoriesList
+                    categoryList={categoryList}
+                    color={'text.hint'}
+                />
                 <Link to={`/category/recipes/${id}`} className="title">
                     <Typography
                         component={'h5'}
@@ -162,7 +153,11 @@ const ArticlesListItemExtended = ({
                     >
                         |
                     </Typography>
-                    <Link to={`/category/recipes/${id}/#respond`}>
+                    <HashLink
+                        smooth
+                        to={`/category/recipes/${id}/#comments`}
+                        scroll={(el) => scrollWithOffset(el)}
+                    >
                         <Typography
                             component={'span'}
                             variant={'inherit'}
@@ -181,7 +176,7 @@ const ArticlesListItemExtended = ({
                             />{' '}
                             0 comment
                         </Typography>
-                    </Link>
+                    </HashLink>
                 </Typography>
                 <div className="action-links-wrapper">
                     <div className="action-links">

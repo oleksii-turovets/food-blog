@@ -12,6 +12,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import './ArticleList.scss'
 import ArticleListActionBtn from 'components/ArticleListActionBtn/ArticleListActionBtn'
+import ArticleCategoriesList from 'components/ArticleCategoriesList/ArticleCategoriesList'
 
 type Props = {
     id?: number
@@ -39,27 +40,10 @@ const ArticlesListItem = ({
                 <img src={image} alt="recipe-photo" style={{ width: '100%' }} />
             </Link>
             <div className="article-head">
-                <div className="categories">
-                    {categoryList?.map((category, index) => (
-                        <Link
-                            to={`/category/${category}`}
-                            className="category-link"
-                            key={index}
-                        >
-                            <Typography
-                                component={'div'}
-                                fontSize={13}
-                                lineHeight={1.2}
-                                textTransform={'capitalize'}
-                                color={'text.hint'}
-                                align={'center'}
-                                className="category-name"
-                            >
-                                {category}
-                            </Typography>
-                        </Link>
-                    ))}
-                </div>
+                <ArticleCategoriesList
+                    categoryList={categoryList}
+                    color={'text.hint'}
+                />
                 <Link to={`/category/recipes/${id}`} className="title">
                     <Typography
                         variant={'h4'}

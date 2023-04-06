@@ -11,8 +11,9 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 type Props = {}
 const Main = (props: Props) => {
     const location = useLocation()
+    console.log(location)
     useEffect(() => {
-        window.scrollTo(0, 0)
+        location.hash.startsWith('#') ? void 0 : window.scrollTo(0, 0)
     }, [location])
     return (
         <>

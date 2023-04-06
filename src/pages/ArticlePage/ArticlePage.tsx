@@ -1,6 +1,5 @@
 import { Container } from '@mui/material'
 import ArticlePageContent from 'components/ArticlePageContent/ArticlePageContent'
-import CategoryPageContent from 'components/CategoryPageContent/CategoryPageContent'
 import PageContent from 'components/PageContent/PageContent'
 import { useParams } from 'react-router-dom'
 

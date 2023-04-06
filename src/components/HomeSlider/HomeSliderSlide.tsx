@@ -1,4 +1,5 @@
 import { Typography } from '@mui/material'
+import ArticleCategoriesList from 'components/ArticleCategoriesList/ArticleCategoriesList'
 import { Link } from 'react-router-dom'
 
 type Props = {
@@ -28,7 +29,7 @@ const HomeSliderSlide = ({
                 style={{ display: isActive ? 'block' : 'none' }}
             >
                 <div className="featured-post-content-animation">
-                    <div className="categories">
+                    {/* <div className="categories">
                         {categoryList?.map((category, index) => (
                             <Link
                                 to={`/category/${category}`}
@@ -47,7 +48,8 @@ const HomeSliderSlide = ({
                                 </Typography>
                             </Link>
                         ))}
-                    </div>
+                    </div> */}
+                    <ArticleCategoriesList categoryList={categoryList} color={'primary.contrastText'} />
                     <Link
                         to={`/category/recipes/${id}`}
                         className="featured-post-link-title"

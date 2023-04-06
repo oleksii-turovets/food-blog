@@ -10,6 +10,7 @@ const PageContent = ({children}: Props) => {
         <Grid
             container
             columnSpacing={0}
+            rowGap={80}
             paddingTop={{ xs: 50, sm: 60 }}
             paddingBottom={{ xs: 80, md: 70 }}
         >
