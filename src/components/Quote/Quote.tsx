@@ -1,6 +1,7 @@
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Typography } from '@mui/material'
+import '@fontsource/crimson-text'
 import './Quote.scss'
 
 type Props = {

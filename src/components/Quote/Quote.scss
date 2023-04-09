@@ -1,5 +1,15 @@
 @import './src/utils/variables';
 
+
+@font-face {
+    font-family: "CrimsomTextItalic";
+    font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+    src: url(https://fonts.gstatic.com/s/crimsontext/v19/wlpogwHKFkZgtmSR3NB0oRJfajhRK_Y.woff2) format('woff2');
+    
+}
+
 .quote {
     position: relative;
     padding-left: 40px;
@@ -15,7 +25,11 @@
     }
 
     .quote-text{
-        font-family: 'Crimsom text', serif;
+        font-family: 'CrimsomTextItalic', serif;
+        color: $text-secondary;
+        font-style: italic;
+        line-height: 1.7;
+            font-size: 16;
     }
 
     .quote-author{
