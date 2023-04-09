@@ -8,6 +8,8 @@ import ArticleHeadButton from 'components/ArticleHeadButton/ArticleHeadButton'
 import { faArrowDown, faPrint } from '@fortawesome/free-solid-svg-icons'
 import Quote from 'components/Quote/Quote'
 import Recipe from 'components/Recipe/Recipe'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 type Props = {
     id: number
@@ -140,8 +142,66 @@ const ArticlePageContent = ({ id }: Props) => {
             <div className="recipe" id="recipe">
                 <Recipe title={title} img={img} content={content} />
             </div>
-            <div className="tag-me"></div>
-            <div className="article-tags"></div>
+            <div className="tag-me">
+                <div className="tag-me-icon">
+                    <FontAwesomeIcon icon={faInstagram} />
+                </div>
+                <Typography
+                    component={'h4'}
+                    textAlign={'center'}
+                    fontSize={20}
+                    lineHeight={1.3}
+                    color={'secondary.contrastText'}
+                    textTransform={'uppercase'}
+                    mb={6}
+                >
+                    Did You Make This Recipe?
+                </Typography>
+                <Typography
+                    component={'p'}
+                    textAlign={'center'}
+                    fontSize={15}
+                    lineHeight={1.5}
+                    color={'secondary.contrastText'}
+                >
+                    How you went with my recipes? Tag me on Instagram at{' '}
+                    <a
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        style={{
+                            color: 'inherit',
+                            textDecoration: 'underline',
+                        }}
+                    >
+                        @PenciDesign.
+                    </a>
+                </Typography>
+            </div>
+            <div className="article-tags">
+                {tags?.map((item, index) => (
+                    <Link key={index} to={`/tag/${item}`}>
+                        <Typography
+                            component={'h5'}
+                            fontSize={11}
+                            lineHeight={1.2}
+                            textTransform={'uppercase'}
+                            sx={{
+                                padding: '6px 12px',
+                                border: '1px solid #eeeeee',
+                                transition: 'all 0.3s',
+                                color: 'text.secondary',
+                                '&:hover': {
+                                    color: 'secondary.contrastText',
+                                    backgroundColor: 'secondary.main',
+                                    borderColor: 'secondary.main',
+                                },
+                            }}
+                        >
+                            {item}
+                        </Typography>
+                    </Link>
+                ))}
+            </div>
             <div className="meta-content"></div>
             <div className="about-author"></div>
             <div className="articles-pagination"></div>

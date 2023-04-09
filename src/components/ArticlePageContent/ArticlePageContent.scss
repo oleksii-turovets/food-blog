@@ -13,4 +13,35 @@
         margin-top: 26px;
         margin-bottom: 20px;
     }
+
+    .tag-me{
+        position: relative;
+        padding: 35px 25px 25px;
+        margin-bottom: 55px;
+        background-color: #555;
+        .tag-me-icon{
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            
+            width: 48px;
+            height: 48px;
+
+            color: $secondary-contrastText;
+            background-color: $secondary-main;
+            border-radius: 50%;
+
+            vertical-align: center;
+            text-align: center;
+            font-size: 30px;
+        }
+    }
+
+    .article-tags{
+        display: flex;
+        gap: 8px;
+        
+    }
 }
