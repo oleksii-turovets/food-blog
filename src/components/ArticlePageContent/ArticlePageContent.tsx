@@ -1,4 +1,4 @@
-import { articlesObject } from 'utils/articlesArray'
+import articlesArray, { articlesObject } from 'utils/articlesArray'
 import { Typography } from '@mui/material'
 import { HashLink } from 'react-router-hash-link'
 import { Link } from 'react-router-dom'
@@ -10,6 +10,9 @@ import Quote from 'components/Quote/Quote'
 import Recipe from 'components/Recipe/Recipe'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import ArticleMetaContent from 'components/ArticleMetaContent/ArticleMetaContent'
+import AuthorBio from 'components/AuthorBio/AuthorBio'
+import ArticlesPagination from 'components/ArticlesPagination/ArticlesPagination'
 
 type Props = {
     id: number
@@ -17,6 +20,7 @@ type Props = {
 
 const ArticlePageContent = ({ id }: Props) => {
     const { title, img, category, tags, details, content } = articlesObject[id]
+    const articleIndex = articlesArray.findIndex((article) => article.id == id)
     return (
         <article className="article-page-content">
             <div className="article-head">
@@ -202,9 +206,15 @@ const ArticlePageContent = ({ id }: Props) => {
                     </Link>
                 ))}
             </div>
-            <div className="meta-content"></div>
-            <div className="about-author"></div>
-            <div className="articles-pagination"></div>
+            <div className="meta-content">
+                <ArticleMetaContent id={id} image={img} title={title} />
+            </div>
+            <div className="about-author">
+                <AuthorBio author={details?.author!} />
+            </div>
+            <div className="articles-pagination">
+                <ArticlesPagination articlesArray={articlesArray } currentArticleIndex={articleIndex} />
+            </div>
             <div className="related-articles"></div>
             <div className="comments" id="comments"></div>
         </article>

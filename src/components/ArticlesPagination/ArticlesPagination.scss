@@ -1,0 +1,18 @@
+@import './src/utils/variables';
+
+.articles-pagination-wrapper {
+    display: flex;
+    gap: 20px;
+    padding: 15px 0;
+    border-top: 1px solid $light-lines;
+    border-bottom: 1px solid $light-lines;
+
+    .post-pag {
+        flex: 0 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+
+    .next-post {
+        text-align: right;
+    }
+}

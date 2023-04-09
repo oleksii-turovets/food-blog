@@ -8,8 +8,9 @@ type Props = {
     icon: IconDefinition
     children: React.ReactNode
     onClick?: React.MouseEventHandler<HTMLAnchorElement>
+    color?: string
 }
-const ArticleListActionBtn = ({ href, icon, children, onClick }: Props) => {
+const ArticleListActionBtn = ({ href, icon, children, onClick, color }: Props) => {
     return (
         <IconButton
             className="action-links-btn"
@@ -21,7 +22,7 @@ const ArticleListActionBtn = ({ href, icon, children, onClick }: Props) => {
                 padding: 0,
                 height: 14,
                 width: 14,
-                color: 'text.primary',
+                color: `${color === undefined ? 'text.primary' : color}`,
                 '&:hover': {
                     color: 'text.hint',
                     background: 'none',

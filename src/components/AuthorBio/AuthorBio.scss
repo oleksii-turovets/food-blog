@@ -1,0 +1,33 @@
+@import './src/utils/variables';
+
+.author-bio{
+    display: flex;
+    gap: 20px;
+
+    .author-img{
+        display: block;
+        flex: 0 0 80px;
+        border-radius: 100%;
+        height: 100%;
+    }
+    .author-text{
+        flex-grow: 1;
+
+        .author-bio{
+            margin: 15px 0;
+        }
+
+        .author-links{
+            display: flex; 
+            gap: 14px;
+        }
+    }
+}
+
+@media (min-width: 600px){
+    .author-bio {
+        .author-img {
+            flex: 0 0 100px;
+        }
+    }
+}
