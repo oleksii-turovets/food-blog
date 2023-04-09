@@ -86,8 +86,62 @@ const Recipe = ({ title, img, content }: Props) => {
                     </div>
                 </div>
             </div>
-            <div className="ingredients">Ingredients</div>
-            <div className="instructions">Instructions</div>
+            <div className="ingredients">
+                <Typography
+                    component={'h3'}
+                    variant="h5"
+                    color={'text.secondary'}
+                    mb={18}
+                >
+                    Ingredients
+                </Typography>
+                <Typography
+                    component={'ul'}
+                    variant="body1"
+                    color={'text.primary'}
+                    paddingLeft={18}
+                    className="ingredients-list"
+                >
+                    {content?.ingredients.map((item, index) => (
+                        <Typography
+                            key={index}
+                            component={'li'}
+                            variant="inherit"
+                            color={'inherit'}
+                        >
+                            {item}
+                        </Typography>
+                    ))}
+                </Typography>
+            </div>
+            <div className="instructions">
+                <Typography
+                    component={'h3'}
+                    variant="h5"
+                    color={'text.secondary'}
+                    mb={18}
+                >
+                    Instructions
+                </Typography>
+                <Typography
+                    component={'ol'}
+                    variant="body1"
+                    color={'text.primary'}
+                    paddingLeft={18}
+                    className="instructions-list"
+                >
+                    {content?.instructions.map((item, index) => (
+                        <Typography
+                            key={index}
+                            component={'li'}
+                            variant="inherit"
+                            color={'inherit'}
+                        >
+                            {item}
+                        </Typography>
+                    ))}
+                </Typography>
+            </div>
         </div>
     )
 }

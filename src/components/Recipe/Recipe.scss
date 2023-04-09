@@ -5,7 +5,6 @@
 }
 
 .recipe-content{
-    
     border: 1px solid $light-lines;
 
     .recipe-head{
@@ -40,6 +39,46 @@
                 .rating-stars-box{
                     display: block;
                     margin-left: -5px;
+                }
+            }
+        }
+    }
+    .ingredients{
+        padding: 25px 25px 30px;
+        border-bottom: 1px solid $light-lines;
+        .ingredients-list{
+            list-style: none;
+            >li{
+                position: relative;
+
+                >&:not(:last-child){
+                    padding-bottom: 6px;
+                }
+                &::before{
+                    content: "";
+                    box-sizing: border-box;
+                    position: absolute;
+                    top: 9px;
+                    left: -16px;
+
+                    width: 6px;
+                    height: 6px;
+                    border: 1px solid;
+                    display: inline-block;
+                    
+                    transform: rotate(-45deg);
+                    -webkit-transform: rotate(-45deg);
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+    .instructions{
+        padding: 25px 25px 40px;
+        .instructions-list{
+            >li{
+                >&:not(:last-child) {
+                    padding-bottom: 2px;
                 }
             }
         }
