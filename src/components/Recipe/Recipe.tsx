@@ -13,6 +13,9 @@ type Props = {
 const Recipe = ({ id }: Props) => {
     const { title, img, content } = articlesObject[id]
 
+    const articleRatingValue = useAppSelector(
+        (state) => state.articlesRating[id].ratingValue
+    )
     const articleRatingVotesNumber = useAppSelector(
         (state) => state.articlesRating[id].votesNumber
     )
@@ -73,11 +76,9 @@ const Recipe = ({ id }: Props) => {
                             fontSize={15}
                             lineHeight={1.5}
                         >
-                            Rating: {content?.general.rating.value}/5{' '}
-                            <RecipeRateStars
-                                id={id}
-                            />
-                            ( {articleRatingVotesNumber} votes )
+                            Rating: {articleRatingValue}/5{' '}
+                            <RecipeRateStars id={id} />({' '}
+                            {articleRatingVotesNumber} votes )
                         </Typography>
                     </div>
                 </div>
