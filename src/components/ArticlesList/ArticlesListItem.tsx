@@ -13,9 +13,11 @@ import {
 import './ArticleList.scss'
 import ArticleListActionBtn from 'components/ArticleListActionBtn/ArticleListActionBtn'
 import ArticleCategoriesList from 'components/ArticleCategoriesList/ArticleCategoriesList'
+import { useAppDispatch, useAppSelector } from 'redux/hooks'
+import { toggleLike } from 'redux/likeReducer'
 
 type Props = {
-    id?: number
+    id: number
     image?: string
     title?: string
     categoryList?: string[]
@@ -32,7 +34,11 @@ const ArticlesListItem = ({
     author,
     desc,
 }: Props) => {
-    const isLiked = true
+    const isLiked = useAppSelector((state) => state.articleLike[id].isLiked)
+    const likesNumber = useAppSelector(
+        (state) => state.articleLike[id].likeNumber
+    )
+    const dispatch = useAppDispatch()
 
     return (
         <div className="article-list-item">
@@ -120,9 +126,12 @@ const ArticlesListItem = ({
                     <ArticleListActionBtn
                         href={'/'}
                         icon={isLiked ? faHeartSolid : faHeart}
-                        onClick={(e) => e.preventDefault()}
+                        onClick={(e) => {
+                            e.preventDefault()
+                            dispatch(toggleLike(id))
+                        }}
                     >
-                        Likes
+                        {likesNumber}
                     </ArticleListActionBtn>
                     <ArticleListActionBtn
                         href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.origin}/category/recipes/${id}`}

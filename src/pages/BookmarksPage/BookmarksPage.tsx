@@ -1,4 +1,5 @@
 import { Container } from '@mui/material'
+import BookmarksPageContent from 'components/BookmarksPageContent/BookmarksPageContent'
 import PageContent from 'components/PageContent/PageContent'
 
 type Props = {}
@@ -15,7 +16,7 @@ const BookmarkPage = (props: Props) => {
             disableGutters={true}
         >
         <PageContent>
-          <div>Bookmarks</div>
+          <BookmarksPageContent/>
             </PageContent>
         </Container>
     )

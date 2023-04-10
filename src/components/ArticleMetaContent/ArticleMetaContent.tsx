@@ -13,6 +13,8 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import ArticleListActionBtn from 'components/ArticleListActionBtn/ArticleListActionBtn'
 import { Article } from 'utils/articlesArray'
+import { useAppDispatch, useAppSelector } from 'redux/hooks'
+import { toggleLike } from 'redux/likeReducer'
 
 type Props = {
     id: Article['id']
@@ -21,7 +23,9 @@ type Props = {
 }
 
 const ArticleMetaContent = ({ id, title, image }: Props) => {
-    const isLiked = true
+    const isLiked = useAppSelector((state) => state.articleLike[id].isLiked)
+    const likesNumber = useAppSelector((state) => state.articleLike[id].likeNumber)
+    const dispatch = useAppDispatch()
 
     const scrollWithOffset = (el: HTMLElement) => {
         const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset
@@ -100,13 +104,18 @@ const ArticleMetaContent = ({ id, title, image }: Props) => {
                             fontWeight={700}
                             fontStyle={'italic'}
                             mr={5}
+                            width={12}
+                            display={'inline-block'}
                         >
-                            11
+                            {likesNumber}
                         </Typography>
                         <ArticleListActionBtn
                             href={'/'}
                             icon={isLiked ? faHeartSolid : faHeart}
-                            onClick={(e) => e.preventDefault()}
+                            onClick={(e) => {
+                                e.preventDefault()
+                                dispatch(toggleLike(id))
+                            }}
                             color={isLiked ? 'text.hint' : 'text.primary'}
                         >
                             Likes

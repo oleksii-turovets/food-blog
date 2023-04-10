@@ -1,5 +1,5 @@
 import { Typography } from '@mui/material'
-import { HashLink } from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -18,10 +18,12 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import './ArticleList.scss'
 import ArticleListActionBtn from 'components/ArticleListActionBtn/ArticleListActionBtn'
-import ArticleCategoriesList from 'components/ArticleCategoriesList/ArticleCategoriesList';
+import ArticleCategoriesList from 'components/ArticleCategoriesList/ArticleCategoriesList'
+import { useAppDispatch, useAppSelector } from 'redux/hooks'
+import { toggleLike } from 'redux/likeReducer'
 
 type Props = {
-    id?: number
+    id: number
     image?: string
     title?: string
     categoryList?: string[]
@@ -38,9 +40,13 @@ const ArticlesListItemExtended = ({
     author,
     desc,
 }: Props) => {
-    const isLiked = true
+    const isLiked = useAppSelector((state) => state.articleLike[id].isLiked)
+    const likesNumber = useAppSelector(
+        (state) => state.articleLike[id].likeNumber
+    )
+    const dispatch = useAppDispatch()
 
-    const scrollWithOffset = (el:HTMLElement) => {
+    const scrollWithOffset = (el: HTMLElement) => {
         const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset
         const yOffset = -80
         window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' })
@@ -183,9 +189,12 @@ const ArticlesListItemExtended = ({
                         <ArticleListActionBtn
                             href={'/'}
                             icon={isLiked ? faHeartSolid : faHeart}
-                            onClick={(e) => e.preventDefault()}
+                            onClick={(e) => {
+                                e.preventDefault()
+                                dispatch(toggleLike(id))
+                            }}
                         >
-                            Likes
+                            {likesNumber}
                         </ArticleListActionBtn>
                         <ArticleListActionBtn
                             href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.origin}/category/recipes/${id}`}
