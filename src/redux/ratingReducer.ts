@@ -24,14 +24,14 @@ export const ratingSlice = createSlice({
         addUserRating: (state, action) => ({
             ...state,
             [action.payload.id]: {
-                ratingValue: ((state[action.payload.id].ratingValue || 0) * state[action.payload.id].votesNumber + Math.ceil(action.payload.userValue || 0))/(state[action.payload.id].votesNumber+1) ,
+                ratingValue: Math.round(((state[action.payload.id].ratingValue || 0) * state[action.payload.id].votesNumber + Math.ceil(action.payload.userValue || 0))/(state[action.payload.id].votesNumber+1)*10)/10 ,
                 votesNumber: state[action.payload.id].votesNumber + 1
             }
         }),
         changeUserRating: (state, action) => ({
             ...state,
             [action.payload.id]: {
-                ratingValue: ((state[action.payload.id].ratingValue || 0) * state[action.payload.id].votesNumber - (action.payload.prevUserValue || 0) + Math.ceil(action.payload.userValue || 0)) / (state[action.payload.id].votesNumber),
+                ratingValue: Math.round(((state[action.payload.id].ratingValue || 0) * state[action.payload.id].votesNumber - (action.payload.prevUserValue || 0) + Math.ceil(action.payload.userValue || 0)) / (state[action.payload.id].votesNumber)*10)/10,
                 votesNumber: state[action.payload.id].votesNumber
             }
         })

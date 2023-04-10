@@ -76,7 +76,19 @@ const Recipe = ({ id }: Props) => {
                             fontSize={15}
                             lineHeight={1.5}
                         >
-                            Rating: {articleRatingValue}/5{' '}
+                            Rating:{' '}
+                            <Typography
+                                variant="inherit"
+                                component={'span'}
+                                lineHeight={'inherit'}
+                                sx={{
+                                    width: '35px',
+                                    height: '100%',
+                                    display: 'inline-block',
+                                }}
+                            >
+                                {articleRatingValue}/5
+                            </Typography>{' '}
                             <RecipeRateStars id={id} />({' '}
                             {articleRatingVotesNumber} votes )
                         </Typography>
