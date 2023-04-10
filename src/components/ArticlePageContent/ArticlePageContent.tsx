@@ -144,7 +144,7 @@ const ArticlePageContent = ({ id }: Props) => {
                 </Typography>
             </div>
             <div className="recipe" id="recipe">
-                <Recipe title={title} img={img} content={content} />
+                <Recipe id={id} />
             </div>
             <div className="tag-me">
                 <div className="tag-me-icon">
@@ -213,7 +213,10 @@ const ArticlePageContent = ({ id }: Props) => {
                 <AuthorBio author={details?.author!} />
             </div>
             <div className="articles-pagination">
-                <ArticlesPagination articlesArray={articlesArray } currentArticleIndex={articleIndex} />
+                <ArticlesPagination
+                    articlesArray={articlesArray}
+                    currentArticleIndex={articleIndex}
+                />
             </div>
             <div className="related-articles"></div>
             <div className="comments" id="comments"></div>

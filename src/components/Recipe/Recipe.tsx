@@ -1,20 +1,20 @@
-import { Article } from 'utils/articlesArray'
+import { Article, articlesObject } from 'utils/articlesArray'
 import { Typography } from '@mui/material'
 import './Recipe.scss'
 import RecipeProperty from 'components/RecipeProperty/RecipeProperty'
 import { faFireBurner, faUtensils } from '@fortawesome/free-solid-svg-icons'
 import { faClock } from '@fortawesome/free-regular-svg-icons'
 import RecipeRateStars from 'components/RecipeRateStars/RecipeRateStars'
-import { useState } from 'react'
+import { useAppSelector } from 'redux/hooks'
 
 type Props = {
-    title: Article['title']
-    img: Article['img']
-    content: Article['content']
+    id: Article['id']
 }
-const Recipe = ({ title, img, content }: Props) => {
-    const [rate, setRate] = useState<number | null>(
-        content?.general.rating.value!
+const Recipe = ({ id }: Props) => {
+    const { title, img, content } = articlesObject[id]
+
+    const articleRatingVotesNumber = useAppSelector(
+        (state) => state.articlesRating[id].votesNumber
     )
 
     return (
@@ -75,13 +75,9 @@ const Recipe = ({ title, img, content }: Props) => {
                         >
                             Rating: {content?.general.rating.value}/5{' '}
                             <RecipeRateStars
-                                rate={rate}
-                                votesNumber={
-                                    content?.general.rating.votesNumber!
-                                }
-                                setRate={setRate}
+                                id={id}
                             />
-                            ( {content?.general.rating.votesNumber} votes )
+                            ( {articleRatingVotesNumber} votes )
                         </Typography>
                     </div>
                 </div>

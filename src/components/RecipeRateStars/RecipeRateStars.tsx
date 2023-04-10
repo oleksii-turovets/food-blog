@@ -1,26 +1,38 @@
 import { Rating } from '@mui/material'
 import StarIcon from '@mui/icons-material/Star'
-import { Dispatch, SetStateAction } from 'react'
+import { useState } from 'react'
+import { Article } from 'utils/articlesArray'
+import { useAppDispatch, useAppSelector } from 'redux/hooks'
+import { addUserRating, changeUserRating } from 'redux/ratingReducer'
 
 type Props = {
-    rate: number | null
-    votesNumber: number
-    setRate: Dispatch<SetStateAction<number | null>>
+    id: Article['id']
 }
-const RecipeRateStars = ({ rate, votesNumber, setRate }: Props) => {
+const RecipeRateStars = ({ id }: Props) => {
+    const [prevUserValue, setPrevUserValue] = useState<number | null>()
+
+    const articleRatingValue = useAppSelector(
+        (state) => state.articlesRating[id].ratingValue
+    )
+    const dispatch = useAppDispatch()
+
     return (
-        <span className="rating-stars-box" style={{ position: 'relative', padding: '0 5px' }}>
+        <span
+            className="rating-stars-box"
+            style={{ position: 'relative', padding: '0 5px' }}
+        >
             <Rating
                 name="recipe-rating-controlled"
-                value={rate}
+                value={articleRatingValue}
                 precision={0.1}
                 emptyIcon={<StarIcon fontSize="inherit" />}
                 onChange={(event, userValue) => {
-                    setRate(
-                        ((rate === null ? 0 : rate) * votesNumber +
-                            (userValue === null ? 0 : Math.ceil(userValue))) /
-                            (votesNumber + 1)
-                    )
+                    prevUserValue
+                        ? dispatch(
+                              changeUserRating({ id, userValue, prevUserValue })
+                          )
+                        : dispatch(addUserRating({ id, userValue }))
+                    setPrevUserValue(Math.ceil(userValue||0))
                 }}
                 sx={{
                     position: 'relative',

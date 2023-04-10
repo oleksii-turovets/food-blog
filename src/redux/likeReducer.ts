@@ -2,14 +2,14 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 import articlesArray from "utils/articlesArray"
 
 
-type ProductsLike = {
+type ArticlesLike = {
     [id: number]: {
         isLiked: boolean
         likeNumber: number
     }
 }
 
-export const initialState: ProductsLike = articlesArray.reduce((object, article) => ({
+export const initialState: ArticlesLike = articlesArray.reduce((object, article) => ({
     ...object,
     [article.id]: {
         isLiked: false,

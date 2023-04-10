@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import likeReducer from './likeReducer'
+import ratingReducer from './ratingReducer'
 
 export const store = configureStore({
     reducer: {
         articleLike: likeReducer,
+        articlesRating: ratingReducer,
     },
 })
 
