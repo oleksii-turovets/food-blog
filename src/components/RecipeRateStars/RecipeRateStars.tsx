@@ -27,12 +27,12 @@ const RecipeRateStars = ({ id }: Props) => {
                 precision={0.1}
                 emptyIcon={<StarIcon fontSize="inherit" />}
                 onChange={(event, userValue) => {
-                    prevUserValue
+                    prevUserValue !== undefined
                         ? dispatch(
                               changeUserRating({ id, userValue, prevUserValue })
                           )
                         : dispatch(addUserRating({ id, userValue }))
-                    setPrevUserValue(Math.ceil(userValue||0))
+                    setPrevUserValue(Math.ceil(userValue || 0))
                 }}
                 sx={{
                     position: 'relative',
