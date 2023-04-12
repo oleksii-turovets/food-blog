@@ -13,6 +13,8 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import ArticleMetaContent from 'components/ArticleMetaContent/ArticleMetaContent'
 import AuthorBio from 'components/AuthorBio/AuthorBio'
 import ArticlesPagination from 'components/ArticlesPagination/ArticlesPagination'
+import LeaveComment from 'components/LeaveComment/LeaveComment'
+import { idText } from 'typescript'
 
 type Props = {
     id: number
@@ -219,7 +221,9 @@ const ArticlePageContent = ({ id }: Props) => {
                 />
             </div>
             <div className="related-articles"></div>
-            <div className="comments" id="comments"></div>
+            <div className="comments" id="comments">
+                <LeaveComment id={id } />
+            </div>
         </article>
     )
 }

@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 
-type ArticleComment = {
+export type ArticleComment = {
     name: string
     email: string
     website?: string
@@ -26,9 +26,9 @@ export const commentsSlice = createSlice({
     name: 'comment',
     initialState,
     reducers: {
-        addComment: (state, action) => ({
+        addComment: (state, action:PayloadAction<{id: number, newComment:ArticleComment }>) => ({
             ...state,
-            [action.payload.id] : state[action.payload.id] ? [...state[action.payload.id], action.payload.comment] : [action.payload.comment]
+            [action.payload.id] : state[action.payload.id] ? [...state[action.payload.id], action.payload.newComment] : [action.payload.newComment]
         })
     }
 })

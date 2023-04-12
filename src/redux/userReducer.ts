@@ -7,8 +7,6 @@ type User = {
     [key in UserDataKeys]? : string
 }
 
-const test: keyof User = 'name'
-
 export const initialState: User = {}
 
 export const userSlice = createSlice({
