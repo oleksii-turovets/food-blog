@@ -1,10 +1,7 @@
 import {
     Button,
-    Card,
-    CardContent,
     Checkbox,
     FormControlLabel,
-    TextareaAutosize,
     TextField,
     Typography,
 } from '@mui/material'
@@ -13,6 +10,7 @@ import { useState } from 'react'
 import { ArticleComment, addComment } from 'redux/commentsReducer'
 import './LeaveComment.scss'
 import { changeUserData } from 'redux/userReducer'
+import TitleWithLinesAround from 'components/TitleWithLinesAround/TitleWithLinesAround'
 
 type Props = {
     id: number
@@ -82,14 +80,11 @@ const LeaveComment = ({ id }: Props) => {
 
     return (
         <form onSubmit={sendComment} className="comment-form">
-            <Typography
-                component={'h3'}
-                variant="h4"
-                className="comment-form-title"
-                align="center"
-            >
-                Leave a comment
-            </Typography>
+            <div className="comment-form-title">
+                <TitleWithLinesAround>
+                    Leave a comment
+                </TitleWithLinesAround>
+            </div>
             <div className="comment-form-comment">
                 <TextField
                     variant="outlined"
@@ -113,6 +108,7 @@ const LeaveComment = ({ id }: Props) => {
                 />
                 <TextField
                     label="Email"
+                    type="email"
                     value={newComment.email}
                     onChange={(e) => handleInput(e, 'email')}
                     required
@@ -120,6 +116,7 @@ const LeaveComment = ({ id }: Props) => {
                 />
                 <TextField
                     label="Website"
+                    type="url"
                     value={newComment.website}
                     onChange={(e) => handleInput(e, 'website')}
                     className="user-field website-field"
@@ -131,17 +128,51 @@ const LeaveComment = ({ id }: Props) => {
                         <Checkbox
                             checked={userSavingChecked}
                             onChange={handleUserSaving}
-                            sx={{ '& .MuiSvgIcon-root': { fontSize: 12 } }}
+                            sx={{
+                                '& .MuiSvgIcon-root': { fontSize: 16 },
+                                padding: '0 9px',
+                            }}
                         />
                     }
                     label={
                         'Save my name, email, and website in this browser for the next time I comment.'
                     }
+                    componentsProps={{
+                        typography: {
+                            variant: 'body1',
+                            lineHeight: 1.4,
+                            color: 'text.secondary',
+                        },
+                    }}
                 />
             </div>
             <div className="comment-form-btn-submit">
-                <Button variant="outlined" type="submit">
-                    Submit
+                <Button
+                    variant="contained"
+                    type="submit"
+                    sx={{
+                        display: 'block',
+                        minWidth: '120px',
+                        margin: '0 auto',
+                        padding: '12px 20px',
+                        color: 'text.primary',
+                        backgroundColor: '#f5f5f5',
+                        transition: 'all 0.3s',
+                        boxShadow: 'none',
+                        '&:hover': {
+                            color: 'secondary.contrastText',
+                            backgroundColor: 'secondary.main',
+                        },
+                    }}
+                >
+                    <Typography
+                        component={'span'}
+                        variant="h6"
+                        lineHeight={'auto'}
+                        color={'inherit'}
+                    >
+                        Submit
+                    </Typography>
                 </Button>
             </div>
         </form>

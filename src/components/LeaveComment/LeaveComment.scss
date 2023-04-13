@@ -3,48 +3,69 @@
 .comment-form{
     padding: 36px 0 40px;
 
-    .comment-form-title{
-        padding: 0 10px;
-        position: relative;
-        width: fit-content;
-        margin: 0 auto;
-        &::before, &::after {
-            content: "";
-            position: absolute;
-            width: 60px;
-            height: 1px;
-            background: $secondary-main;
-            display: block;
-            top: 50%;
-            margin-top: -1px;
-        }
+    .comment-form-comment, .comment-form-user{
+        .MuiTextField-root{
+                .MuiOutlinedInput-root{
+                    border: 1px solid #eeeeee;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: $text-primary;
 
-        &::before{
-            left: auto;
-            right: 100%;
-        }
-        &::after{
-            left: 100%;
-            right: auto;
+                    &.Mui-focused {
+                        .MuiOutlinedInput-notchedOutline {
+                            border-width: 1px;
+                        }
+                    }
+
+                    &.Mui-error{
+                        .MuiOutlinedInput-notchedOutline{
+                            border-color: $text-hint;
+                        }
+                    }
+
+                    .MuiOutlinedInput-notchedOutline {
+                        padding: 0 12px;
+                    }
+                }
+                .MuiInputLabel-root{
+                    font-size: 14px;
+                    &.Mui-focused, &.MuiInputLabel-shrink {
+                        transform: translate(20px, -7px) scale(0.75);
+                    }
+                    &.Mui-error{
+                        color: $text-hint;
+                    }
+                }
         }
     }
-
-    .comment-form-comment{
-            // padding: 15px 20px;
-            // border: 1px solid #dedede;
-            // width: 100%;
-            // height: 120px;
-            // font-size: 14px;
-            // color: #313131;
-            // margin-bottom: 28px;
-            // line-height: 20px;
-            // font-weight: 400;
-            // outline: none;
-            // vertical-align: top;
-            // font-family: var(--pcbody-font);
+    .comment-form-comment {
+        .MuiTextField-root{
+                .MuiOutlinedInput-root{
+                    padding: 15px 20px;
+                }
+                .MuiInputLabel-root{
+                    transform: translate(20px, 15px) scale(1);
+                }
+        }
+    }
+    .comment-form-user {
+        .MuiTextField-root{
+                .MuiOutlinedInput-root{
+                    .MuiOutlinedInput-input{
+                        padding: 12px 20px;
+                    }
+                    
+                }
+                .MuiInputLabel-root{
+                    transform: translate(20px, 12px) scale(1);
+                }
+        }
     }
 
     .comment-form-user{
+        margin-top: 28px;
+        margin-bottom: 28px;
+
         display: flex;
         flex-wrap: wrap;
         row-gap: 28px;
@@ -54,6 +75,10 @@
             flex: 0 0 100%;
             max-width: 100%;
         }
+    }
+    .comment-form-btn-submit{
+        margin-top: 15px;
+
     }
 }
 
