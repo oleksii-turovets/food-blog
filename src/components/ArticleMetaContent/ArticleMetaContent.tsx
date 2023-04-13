@@ -23,8 +23,15 @@ type Props = {
 }
 
 const ArticleMetaContent = ({ id, title, image }: Props) => {
+    const commentsNumber = useAppSelector((state) =>
+        state.articlesComments[id] !== undefined
+            ? state.articlesComments[id].length
+            : 0
+    )
     const isLiked = useAppSelector((state) => state.articleLike[id].isLiked)
-    const likesNumber = useAppSelector((state) => state.articleLike[id].likeNumber)
+    const likesNumber = useAppSelector(
+        (state) => state.articleLike[id].likeNumber
+    )
     const dispatch = useAppDispatch()
 
     const scrollWithOffset = (el: HTMLElement) => {
@@ -71,7 +78,9 @@ const ArticleMetaContent = ({ id, title, image }: Props) => {
                             marginBottom: '-2px',
                         }}
                     />{' '}
-                    0 comment
+                    {`${commentsNumber} comment${
+                        commentsNumber > 1 ? 's' : ''
+                    }`}
                 </Typography>
             </HashLink>
 

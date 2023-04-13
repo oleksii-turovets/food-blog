@@ -40,6 +40,11 @@ const ArticlesListItemExtended = ({
     author,
     desc,
 }: Props) => {
+    const commentsNumber = useAppSelector((state) =>
+        state.articlesComments[id] !== undefined
+            ? state.articlesComments[id].length
+            : 0
+    )
     const isLiked = useAppSelector((state) => state.articleLike[id].isLiked)
     const likesNumber = useAppSelector(
         (state) => state.articleLike[id].likeNumber
@@ -180,7 +185,9 @@ const ArticlesListItemExtended = ({
                                 icon={faComment}
                                 className="detail-icon comment-icon"
                             />{' '}
-                            0 comment
+                            {`${commentsNumber} comment${
+                                commentsNumber > 1 ? 's' : ''
+                            }`}
                         </Typography>
                     </HashLink>
                 </Typography>
