@@ -26,7 +26,8 @@ const CommentsList = ({ id }: Props) => {
     const commentsArray: ArticleComment[] = useAppSelector(
         (state) => state.articlesComments[id]
     )
-    const commentsNumber = commentsArray.length
+    const commentsNumber =
+        commentsArray !== undefined ? commentsArray.length : 0
 
     return (
         <div className="comments-list">

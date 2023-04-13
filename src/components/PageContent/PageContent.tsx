@@ -16,9 +16,9 @@ const PageContent = ({children}: Props) => {
             paddingBottom={{ xs: 80, md: 70 }}
         >
             <Grid item xs={12} md={8}>
-                {/* <StickyBox offsetTop={80} offsetBottom={20}> */}
+                <StickyBox offsetTop={80} offsetBottom={20}>
                     {children}
-                {/* </StickyBox> */}
+                </StickyBox>
             </Grid>
             <Grid
                 item
@@ -27,9 +27,9 @@ const PageContent = ({children}: Props) => {
                 paddingLeft={{ xs: 0, md: 50 }}
                 sx={{ position: 'relative' }}
             >
-                {/* <StickyBox offsetTop={80} offsetBottom={20}> */}
+                <StickyBox offsetTop={80} offsetBottom={20}>
                     <Sidebar />
-                {/* </StickyBox> */}
+                </StickyBox>
             </Grid>
         </Grid>
     )

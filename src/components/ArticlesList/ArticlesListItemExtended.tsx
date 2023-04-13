@@ -21,6 +21,7 @@ import ArticleListActionBtn from 'components/ArticleListActionBtn/ArticleListAct
 import ArticleCategoriesList from 'components/ArticleCategoriesList/ArticleCategoriesList'
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { toggleLike } from 'redux/likeReducer'
+import scrollWithOffset from 'utils/scrollWithOffset'
 
 type Props = {
     id: number
@@ -50,12 +51,6 @@ const ArticlesListItemExtended = ({
         (state) => state.articleLike[id].likeNumber
     )
     const dispatch = useAppDispatch()
-
-    const scrollWithOffset = (el: HTMLElement) => {
-        const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset
-        const yOffset = -80
-        window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' })
-    }
 
     return (
         <div className="article-list-item-extended">

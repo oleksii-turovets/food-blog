@@ -8,6 +8,13 @@
             margin-bottom: 6px;
         }
     }
+    .article-head-buttons{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
 
     .desc{
         margin-top: 26px;

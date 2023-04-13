@@ -14,8 +14,9 @@ import ArticleMetaContent from 'components/ArticleMetaContent/ArticleMetaContent
 import AuthorBio from 'components/AuthorBio/AuthorBio'
 import ArticlesPagination from 'components/ArticlesPagination/ArticlesPagination'
 import LeaveComment from 'components/LeaveComment/LeaveComment'
-import { idText } from 'typescript'
 import CommentsList from 'components/Comments/CommentsList'
+import { useEffect } from 'react'
+import scrollWithOffset from 'utils/scrollWithOffset'
 
 type Props = {
     id: number
@@ -24,6 +25,7 @@ type Props = {
 const ArticlePageContent = ({ id }: Props) => {
     const { title, img, category, tags, details, content } = articlesObject[id]
     const articleIndex = articlesArray.findIndex((article) => article.id == id)
+
     return (
         <article className="article-page-content">
             <div className="article-head">
@@ -90,19 +92,15 @@ const ArticlePageContent = ({ id }: Props) => {
                     </Typography>
                 </Typography>
             </div>
-            <div
-                className="article-head-buttons"
-                style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: '20px',
-                    justifyContent: 'center',
-                    marginBottom: '30px',
-                }}
-            >
+            <div className="article-head-buttons">
                 <ArticleHeadButton
                     href="#recipe"
-                    onClick={() => console.log('click jump')}
+                    onClick={(e) => {
+                        console.log('click jump')
+                        e.preventDefault()
+                        const recipe = document.getElementById('recipe')
+                        scrollWithOffset(recipe!)
+                    }}
                     icon={faArrowDown}
                     text={'Jump to Recipe'}
                 />
