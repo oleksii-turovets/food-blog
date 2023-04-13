@@ -1,13 +1,20 @@
 import { IconButton, Typography, Grid } from '@mui/material'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
+import { OverridableStringUnion } from '@mui/types'
+import { Variant } from '@mui/material/styles/createTypography'
+import { TypographyPropsVariantOverrides } from '@mui/material/Typography/Typography'
 
 type Props = {
     iconName: IconDefinition
     href: string
+    variant?: OverridableStringUnion<
+        Variant | 'inherit',
+        TypographyPropsVariantOverrides
+    >
 }
 
-const SidebarSocialBtn = ({ iconName, href }: Props) => {
+const SidebarSocialBtn = ({ iconName, href, variant }: Props) => {
     return (
         <Grid item>
             <IconButton
@@ -19,9 +26,10 @@ const SidebarSocialBtn = ({ iconName, href }: Props) => {
             >
                 <Typography
                     component="div"
-                    variant="h3"
+                    variant={variant === undefined ? 'h3' : variant}
                     color={'text.primary'}
                     sx={{
+                        transition: 'all 0.3s',
                         '&:hover': {
                             color: 'secondary.main',
                         },

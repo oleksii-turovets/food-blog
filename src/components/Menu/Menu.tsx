@@ -17,12 +17,8 @@ const Menu = (props: Props) => {
     return (
         <nav className="header-nav">
             <MenuItem to="/">Home</MenuItem>
-            <MenuItem to="/category/featured" hasSubElements={true}>
+            <MenuItem to="/category/featured">
                 Featured{' '}
-                <FontAwesomeIcon
-                    icon={faAngleDown}
-                    className="icon-fa-angle-down"
-                />
             </MenuItem>
             <MenuItem to="/category/recipes" hasSubElements={true}>
                 Recipes{' '}

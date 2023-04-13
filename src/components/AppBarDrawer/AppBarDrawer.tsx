@@ -11,6 +11,11 @@ import {
     ListItemText,
     Typography,
 } from '@mui/material'
+import Logo from 'components/Logo/Logo'
+import './AppBarDrawer.scss'
+import TopSocialBtns from 'components/TopSocialBtns/TopSocialBtns'
+import SidebarSocialBtns from 'components/SidebarSocialBtns/SidebarSocialBtns'
+import AppBarDrawerMenu from 'components/AppBarDrawerMenu/AppBarDrawerMenu'
 
 type Props = {
     window?: () => Window
@@ -18,7 +23,7 @@ type Props = {
     mobileOpen: boolean
 }
 
-const drawerWidth = 240
+const drawerWidth = 270
 const navItems = [
     'Home',
     'Featured',
@@ -34,8 +39,12 @@ const AppBarDrawer = ({ window, handleDrawerToggle, mobileOpen }: Props) => {
         window !== undefined ? () => window().document.body : undefined
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <Typography variant="h6" sx={{ my: 2 }}>
+        <Box
+            onClick={handleDrawerToggle}
+            sx={{ textAlign: 'center', padding: '30px 20px 30px' }}
+            className="app-bar-drawer"
+        >
+            {/* <Typography variant="h6" sx={{ my: 2 }}>
                 MUI
             </Typography>
             <Divider />
@@ -47,7 +56,14 @@ const AppBarDrawer = ({ window, handleDrawerToggle, mobileOpen }: Props) => {
                         </ListItemButton>
                     </ListItem>
                 ))}
-            </List>
+            </List> */}
+            <div className="logo-wrapper">
+                <Logo align="center" />
+            </div>
+            <div className="social-btns-wrapper">
+                <SidebarSocialBtns variant="h6" />
+            </div>
+            <AppBarDrawerMenu/>
         </Box>
     )
 
