@@ -1,0 +1,35 @@
+@import '/src/utils/variables.scss';
+
+
+.comments-list{
+    padding: 36px 0 40px;
+    border-bottom: 1px solid $light-lines;
+
+    .comments-wrapper-slider{
+        .swiper-pagination{
+            margin-top: 15px;
+            position: static;
+
+            .swiper-pagination-bullet-active {
+                background: $secondary-main;
+            }
+        }
+    }
+
+    .comment-item {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        min-height: 80px;
+
+        .comment-item-user-img {
+            display: block;
+            width: 60px;
+            aspect-ratio: 1/1;
+        }
+
+        .comment-item-user-link-disabled {
+            pointer-events: none;
+        }
+    }
+}

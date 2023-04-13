@@ -27,7 +27,7 @@ const LeaveComment = ({ id }: Props) => {
         comment: '',
     })
 
-    const [userSavingChecked, setUserSavingChecked] = useState<boolean>(true)
+    const [userSavingChecked, setUserSavingChecked] = useState<boolean>(false)
 
     const handleUserSaving = (event: React.ChangeEvent<HTMLInputElement>) => {
         setUserSavingChecked(event.target.checked)

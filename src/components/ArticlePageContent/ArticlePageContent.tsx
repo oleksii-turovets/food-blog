@@ -15,6 +15,7 @@ import AuthorBio from 'components/AuthorBio/AuthorBio'
 import ArticlesPagination from 'components/ArticlesPagination/ArticlesPagination'
 import LeaveComment from 'components/LeaveComment/LeaveComment'
 import { idText } from 'typescript'
+import CommentsList from 'components/Comments/CommentsList'
 
 type Props = {
     id: number
@@ -222,7 +223,8 @@ const ArticlePageContent = ({ id }: Props) => {
             </div>
             <div className="related-articles"></div>
             <div className="comments" id="comments">
-                <LeaveComment id={id } />
+                <CommentsList id={id} />
+                <LeaveComment id={id} />
             </div>
         </article>
     )

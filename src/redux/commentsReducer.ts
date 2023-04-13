@@ -14,10 +14,15 @@ type ArticlesComments = {
 export const initialState: ArticlesComments = {
     1: [
         {
-            name: 'string',
-    email: 'string',
-    website: 'string',
-    comment: 'string',
+            name: 'Ben',
+            email: 'ben@gmail.com',
+            website: 'https://www.ben.com/',
+            comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ullam, voluptate vero amet neque obcaecati optio ipsum ab dolorum laborum dicta maxime repellat sunt totam, labore illum, inventore consequuntur illo!',
+        },
+        {
+            name: 'Franky',
+            email: 'franky@gmail.com',
+            comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
         },
     ]
 }
