@@ -58,3 +58,29 @@
 
 
 }
+
+@media print {
+
+    body * {
+        visibility: hidden;
+        height: 0;
+    }
+
+    .printing {
+        visibility: visible;
+        height: fit-content;
+    }
+
+    .printing *:not([class*='--fa']) {
+    visibility: visible;
+    height: fit-content;
+    }
+
+
+    .printing {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+

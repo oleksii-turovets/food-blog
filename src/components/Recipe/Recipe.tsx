@@ -1,11 +1,17 @@
 import { Article, articlesObject } from 'utils/articlesArray'
-import { Typography } from '@mui/material'
+import { Button, Typography } from '@mui/material'
 import './Recipe.scss'
 import RecipeProperty from 'components/RecipeProperty/RecipeProperty'
-import { faFireBurner, faUtensils } from '@fortawesome/free-solid-svg-icons'
+import {
+    faFireBurner,
+    faPrint,
+    faUtensils,
+} from '@fortawesome/free-solid-svg-icons'
 import { faClock } from '@fortawesome/free-regular-svg-icons'
 import RecipeRateStars from 'components/RecipeRateStars/RecipeRateStars'
 import { useAppSelector } from 'redux/hooks'
+import printById from 'utils/printById'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 type Props = {
     id: Article['id']
@@ -40,9 +46,38 @@ const Recipe = ({ id }: Props) => {
                     >
                         {title}
                     </Typography>
-                    <button type="button" className="btn-print">
-                        Print
-                    </button>
+                    <Button
+                        type="button"
+                        className="btn-print"
+                        onClick={() => printById('recipe')}
+                        variant="outlined"
+                        color="secondary"
+                        sx={{
+                            fontSize: '12px',
+                            fontWeight: '700',
+                            textTransform: 'none',
+                            fontFamily: 'Crimson Text',
+                            lineHeight: '12px',
+                            transition: 'all 0.3s',
+                            padding: '6px 12px',
+                            '&:hover': {
+                                color: 'secondary.contrastText',
+                                backgroundColor: 'secondary.main',
+                            },
+                        }}
+                    >
+                        <Typography variant="inherit">
+                            <FontAwesomeIcon
+                                icon={faPrint}
+                                style={{
+                                    position: 'relative',
+                                    marginRight: '5px',
+                                    top: '1px',
+                                }}
+                            />
+                            Print
+                        </Typography>
+                    </Button>
                     <div
                         className="recipe-properties"
                         style={{

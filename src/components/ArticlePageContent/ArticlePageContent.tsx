@@ -1,6 +1,5 @@
 import articlesArray, { articlesObject } from 'utils/articlesArray'
 import { Typography } from '@mui/material'
-import { HashLink } from 'react-router-hash-link'
 import { Link } from 'react-router-dom'
 import ArticleCategoriesList from 'components/ArticleCategoriesList/ArticleCategoriesList'
 import './ArticlePageContent.scss'
@@ -15,8 +14,8 @@ import AuthorBio from 'components/AuthorBio/AuthorBio'
 import ArticlesPagination from 'components/ArticlesPagination/ArticlesPagination'
 import LeaveComment from 'components/LeaveComment/LeaveComment'
 import CommentsList from 'components/Comments/CommentsList'
-import { useEffect } from 'react'
 import scrollWithOffset from 'utils/scrollWithOffset'
+import printById from 'utils/printById'
 
 type Props = {
     id: number
@@ -96,7 +95,6 @@ const ArticlePageContent = ({ id }: Props) => {
                 <ArticleHeadButton
                     href="#recipe"
                     onClick={(e) => {
-                        console.log('click jump')
                         e.preventDefault()
                         const recipe = document.getElementById('recipe')
                         scrollWithOffset(recipe!)
@@ -106,8 +104,9 @@ const ArticlePageContent = ({ id }: Props) => {
                 />
                 <ArticleHeadButton
                     href="#"
-                    onClick={() => {
-                        console.log('click print')
+                    onClick={(e) => {
+                        e.preventDefault()
+                        printById('recipe')
                     }}
                     icon={faPrint}
                     text={'Print Recipe'}
