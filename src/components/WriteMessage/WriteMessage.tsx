@@ -13,7 +13,7 @@ type Message = {
 }
 
 const WriteMessage = (props: Props) => {
-    const [isMessageSent, setIsMessageSent] = useState<boolean>(true)
+    const [isMessageSent, setIsMessageSent] = useState<boolean>(false)
     const [isSuccess, setIsSuccess] = useState<boolean>(false)
     const [newMessage, setNewMessage] = useState<Message>({
         name: '',
@@ -84,7 +84,7 @@ const WriteMessage = (props: Props) => {
                     type="email"
                     value={newMessage.email}
                     onChange={(e) => handleInput(e, 'email')}
-                    // required
+                    required
                     className="user-field email-field"
                 />
                 <TextField

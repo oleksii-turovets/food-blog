@@ -43,6 +43,10 @@ const AppBarDrawerMenu = (props: Props) => {
                                     component={'span'}
                                     variant="inherit"
                                     marginLeft={5}
+                                    sx={{
+                                        position: 'absolute',
+                                        right: 0,
+                                    }}
                                 >
                                     {filteredArray.length}
                                 </Typography>
