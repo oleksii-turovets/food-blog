@@ -17,19 +17,19 @@ const Menu = (props: Props) => {
     return (
         <nav className="header-nav">
             <MenuItem to="/">Home</MenuItem>
-            <MenuItem to="/category/featured">
-                Featured{' '}
-            </MenuItem>
-            <MenuItem to="/category/recipes" hasSubElements={true}>
+            <MenuItem to="/category/featured">Featured </MenuItem>
+            <MenuItem
+                to="/category/recipes"
+                hasSubElements={true}
+                subMenuItems={['all', 'baking', 'breakfast', 'drinks', 'vegan']}
+            >
                 Recipes{' '}
                 <FontAwesomeIcon
                     icon={faAngleDown}
                     className="icon-fa-angle-down"
                 />
             </MenuItem>
-            <MenuItem to="/category/breakfast" >
-                Breakfast
-            </MenuItem>
+            <MenuItem to="/category/breakfast">Breakfast</MenuItem>
             <MenuItem to="/about">About</MenuItem>
             <MenuItem to="/contact">Contact</MenuItem>
             <MenuItem to="/category/bookmarks">
