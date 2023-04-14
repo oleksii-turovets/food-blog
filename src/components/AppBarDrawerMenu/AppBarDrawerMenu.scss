@@ -1,0 +1,96 @@
+@import '/src/utils/variables.scss';
+
+.app-bar{
+    * {
+        box-sizing: border-box;
+    }
+    a {
+        display: block;
+        padding: 13px 17px 13px 0;
+        position: relative;
+    }
+    ul{
+        list-style: none;
+        text-align: left;
+        margin: 0;
+        padding: 10px 0 10px 12px;
+        ul{
+            border-top: 1px solid $light-lines;
+
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, max-height 0.3s ease;
+            transform-origin: 0 0;
+            overflow: hidden;
+
+            &.submenu-hidden{
+                visibility: hidden;
+                opacity: 0;
+                max-height: 0;
+                padding: 0 0 0 12px;
+                -webkit-transform: rotateX(-90deg);
+                -moz-transform: rotateX(-90deg);
+                -ms-transform: rotateX(-90deg);
+                -o-transform: rotateX(-90deg);
+                transform: rotateX(-90deg);
+
+            }
+            &.submenu-shown{
+                visibility: visible;
+                opacity: 1;
+                max-height: 1000px;
+                -webkit-transform: rotateX(0deg);
+                -moz-transform: rotateX(0deg);
+                -ms-transform: rotateX(0deg);
+                -o-transform: rotateX(0deg);
+                transform: rotateX(0deg);
+            }
+
+
+            a {
+                padding: 10px 17px 10px 0;
+            }
+        }
+
+        >li:last-child{
+            border-bottom: none;
+        }
+    }
+    li{
+        border-bottom: 1px solid $light-lines;
+    }
+    >ul{
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu-item{
+        color: $text-primary;
+
+        &:hover{
+            color: $text-hint;
+        }
+    }
+
+    .menu-item-active {
+        color: $text-hint;
+    }
+
+
+    .clicker{
+        height: 12px;
+        width: 12px;
+        vertical-align: bottom;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+        z-index: 20;
+        *{
+            transition: all 0.4s;
+        }
+        svg{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

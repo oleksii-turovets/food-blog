@@ -1,8 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import articlesArray from 'utils/articlesArray'
 import { useAppSelector } from 'redux/hooks'
 import { Typography } from '@mui/material'
+import AppBarDrawerMenuItem from './AppBarDrawerMenuItem'
+import './AppBarDrawerMenu.scss'
 
 type Props = {}
 const AppBarDrawerMenu = (props: Props) => {
@@ -12,34 +12,44 @@ const AppBarDrawerMenu = (props: Props) => {
         (item) => articleLike[item.id].isLiked
     )
     return (
-        <div>
+        <div className="app-bar">
             <ul>
-                <li>Home</li>
-                <li>Featured</li>
-                <li>
-                    Recipes
-                    <ul>
-                        <li>All</li>
-                        <li>Baking</li>
-                        <li>Breakfast</li>
-                        <li>Drinks</li>
-                        <li>Vegan</li>
-                    </ul>
-                </li>
-                <li>About</li>
-                <li>Contact</li>
-                <li>
-                    Bookmarks{' '}
-                    {filteredArray.length === 0 ? null : (
-                        <Typography
-                            component={'span'}
-                            variant="inherit"
-                            marginLeft={5}
-                        >
-                            {filteredArray.length}
-                        </Typography>
+                <AppBarDrawerMenuItem to="/" title="Home" />
+                <AppBarDrawerMenuItem
+                    to="/category/featured"
+                    title="Featured"
+                />
+                <AppBarDrawerMenuItem to="/category/recipes" title="Recipes">
+                    <AppBarDrawerMenuItem to="/category/recipes" title="All" />
+                    {['baking', 'breakfast', 'drinks', 'vegan'].map(
+                        (item, index) => (
+                            <AppBarDrawerMenuItem
+                                key={index}
+                                to={`/category/${item}`}
+                                title={item}
+                            />
+                        )
                     )}
-                </li>
+                </AppBarDrawerMenuItem>
+                <AppBarDrawerMenuItem to="/about" title="About" />
+                <AppBarDrawerMenuItem to="/contact" title="Contact" />
+                <AppBarDrawerMenuItem
+                    to="/category/bookmarks"
+                    title={
+                        <>
+                            Bookmarks
+                            {filteredArray.length === 0 ? null : (
+                                <Typography
+                                    component={'span'}
+                                    variant="inherit"
+                                    marginLeft={5}
+                                >
+                                    {filteredArray.length}
+                                </Typography>
+                            )}
+                        </>
+                    }
+                />
             </ul>
         </div>
     )
