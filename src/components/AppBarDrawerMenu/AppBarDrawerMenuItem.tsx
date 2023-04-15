@@ -37,8 +37,9 @@ const AppBarDrawerMenuItem = ({ to, title, children }: Props) => {
                 ) : (
                     <div
                         className="clicker"
-                        onClick={() =>
-                            setIsSubMenuShown((prevState) => !prevState)
+                            onClick={(e) => {
+                            e.preventDefault()
+                            setIsSubMenuShown((prevState) => !prevState)}
                         }
                         >
                             <FontAwesomeIcon icon={isSubMenuShown ? faAngleUp: faAngleDown }/>
@@ -52,7 +53,6 @@ const AppBarDrawerMenuItem = ({ to, title, children }: Props) => {
                     className={
                         isSubMenuShown ? 'submenu-shown' : 'submenu-hidden'
                     }
-                    // style={{ display: isSubMenuShown ? 'block' : 'none' }}
                 >
                     {children}
                 </ul>

@@ -68,6 +68,10 @@
         &:hover{
             color: $text-hint;
         }
+
+        &:has(+ul li>.menu-item-active){
+            color: $text-hint;
+        }
     }
 
     .menu-item-active {
